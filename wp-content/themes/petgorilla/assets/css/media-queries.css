@@ -1,0 +1,134 @@
+
+/*
+**** BREAKPOINT: DESKTOP DEVICES - ASCENDING
+*/
+@media (min-width: 1200px) {
+	
+}
+
+/*
+**** BREAKPOINT: LARGE DEVICES - ASCENDING
+*/
+@media (min-width: 1025px) {
+	
+}
+
+/*
+**** BREAKPOINT: MEDIUM DEVICES - ASCENDING
+*/
+@media (min-width: 768px) {
+	
+}
+
+/*
+**** BREAKPOINT: SMALL DEVICES - ASCENDING
+*/
+@media (min-width: 400px) {
+	
+}
+
+/*
+**** BREAKPOINT: DESKTOP DEVICES - DESCENDING
+*/
+@media (max-width: 1200px) {
+	
+}
+
+/*
+**** BREAKPOINT: LARGE DEVICES - DESCENDING
+*/
+@media (max-width: 1025px) {
+	
+}
+
+/*
+**** BREAKPOINT: MEDIUM DEVICES - DESCENDING
+*/
+@media (max-width: 768px) {
+	
+}
+
+/*
+**** BREAKPOINT: SMALL DEVICES - DESCENDING
+*/
+@media (max-width: 400px) {
+	
+}
+
+/*
+**** BREAKPOINT: SMALL LANDSCAPE DEVICES - DESCENDING
+*/
+@media (max-width: 768px) and (orientation: landscape) {
+	
+	.site-band {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	
+	.site-content-contain {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	
+		.site-content {
+			height:70%;
+		}
+	
+			.site-header {
+				height:auto;
+				max-height:unset;
+				min-height:25px;
+				min-width:25px;
+				position:absolute;
+				bottom:10px;
+				left:10px;
+			}
+			
+			.site-main {
+				height:100%;
+			}
+	
+}
+
+/*
+**** BREAKPOINT: MEDIUM PORTRAIT DEVICES - DESCENDING
+*/
+@media (max-width: 768px) and (orientation: portrait) {
+	
+	.site-band {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	
+	.site-content-contain {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	
+		.site-content {
+			height:70%;
+		}
+	
+			.site-header {
+				height:auto;
+				max-height:unset;
+				min-height:25px;
+				min-width:25px;
+				position:absolute;
+				bottom:10px;
+				left:10px;
+			}
+			
+			.site-main {
+				height:100%;
+			}
+
+}
