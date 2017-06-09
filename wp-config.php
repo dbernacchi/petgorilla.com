@@ -17,6 +17,8 @@
  *
  * @package WordPress
  */
+ 
+ date_default_timezone_set('America/Los_Angeles');
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */

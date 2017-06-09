@@ -101,6 +101,7 @@ function(processors)
 			{ /** @type {(HTMLElement|null)} */
 				var s2 = document.getElementById("director-video-thumbs"); /** @type {Element} */
 				var div2 = document.createElement("li"); /** @type {string} */
+				div2.setAttribute('class','col-xs-12');
 				var item = '<figure style="background-image: url(' + d.posters.medium.link + ')"><span class="screen-reader-text">' + d.title + "</span></figure>"; /** @type {string} */
 				div2.innerHTML = item;
 				div2.addEventListener("click", function(types)
@@ -246,18 +247,18 @@ function(processors)
 			{
 				init(data[i]);
 			}, 20);
-			// position = i;
+			position = i;
 			/** @type {NodeList} */
-			//var verticalSlides = document.querySelectorAll("#director-video-thumbs li");
+			var verticalSlides = document.querySelectorAll("#director-video-thumbs li");
 			/** @type {number} */
-			//var j = 0;
-			//for (;j < verticalSlides.length;j++) {
-			//if (j == position) {
-			//verticalSlides[j].classList.add("active");
-			//} else {
-			//verticalSlides[j].classList.remove("active");
-			//}
-			//}
+			var j = 0;
+			for (;j < verticalSlides.length;j++) {
+				if (j == position) {
+					verticalSlides[j].classList.add("active");
+				} else {
+					verticalSlides[j].classList.remove("active");
+				}
+			}
 		};
 	window.addEventListener("load", function()
 	{

@@ -15,19 +15,25 @@
 ?>
 
 				</div><!-- #site-content -->
-
+				<?php
+					
+				$id = get_the_ID();
+				$template = trim(basename(str_replace('.php', '', get_page_template($id))));
+				
+				if($template === 'directors' || $template === 'digital'){ ?>
+				
 				<footer id="site-footer" class="site-footer" role="contentinfo">
-					<?php
-						$id = get_the_ID();
-						$template = basename(str_replace('.php', '', get_page_template($id)));
-						
-						get_template_part( 'template-parts/footers/footer', $template );
-					?>
+					<?php get_template_part( 'template-parts/footers/footer', $template ); ?>
 				</footer><!-- #site-footer -->
+				
+				<?php
+				}
+				?>
 				
 			</div><!-- #site-content-contain -->
 			
 		</div><!-- #site -->
+		<?php get_template_part( 'template-parts/footers/script', 'templates' ); ?>
 		
 	<?php wp_footer(); ?>
 

@@ -28,7 +28,9 @@
 	$slides = $sql->get_posts();
 	
 	?>
+
 	<div id="site-slider-wrap" class="site-slider-wrap">
+		
 	<?php
 	$i = 1;
 	foreach($slides as $slide){
@@ -45,11 +47,11 @@
 			<div class="slider-title">
 				<h1><?php echo $slide_title ?></h1>
 				<h2><?php echo $slide_subtitle ?></h2>
-				<a href="<?php echo $slide_link ?>" rel="<?php echo $slide_type ?>">VIEW</a>
+				<a class="pop-video" href="<?php echo $slide_link ?>" rel="<?php echo $slide_type ?>" data-id="<?php echo $slide->ID ?>" data-type="<?php echo $slide_type ?>">VIEW</a>
 			</div>
 			
-			<div class="slide-background">
-					<img src="<?php echo $img_url ?>">
+			<div class="slide-background" style="background-image:url(<?php echo $img_url ?>);">
+<!-- 					<img src="<?php echo $img_url ?>"> -->
 			</div>
 			
 		</section>

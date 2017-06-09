@@ -372,6 +372,7 @@ template {
 }
 
 .site-slider-contain {
+	pointer-events: all;
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -382,13 +383,14 @@ template {
 }
 
 .site-band {
+	
 	position:absolute;
 	top:40px;
 	left:40px;
 	bottom:40px;
 	right:40px;
 	border:5px solid #000;
-	background:none !important;
+	background:transparent !important;
 	pointer-events: none;
 	overflow:hidden;
 	transition:all 0.3s ease 0s;
@@ -396,26 +398,46 @@ template {
 }
 
 .site-content-contain {
+	pointer-events: none;
 	position:absolute;
-	top:45px;
+	top:175px;
 	left:45px;
 	bottom:45px;
 	right:45px;
 /* 	background-color:#ccc; */
-	padding:30px;
-	overflow:scroll;
+	padding:0px 30px 30px;
+	background:transparent;
+    overflow-y: scroll;
 	z-index:3;
 	transition:all 0.3s ease 0s;
 }
 
+.page-template-general .site-content-contain {
+	pointer-events: all;
+}
+
+
+
 	.site-content {
 		display:block;
-/* 		background-color:#f00; */
+/* 		padding-top:100px; */
+		pointer-events: auto;
+		
+	}
+	
+	.page-template-directors .site-content,
+	.page-template-digital .site-content {
 		height:70%;
+		pointer-events: auto;
+		
 	}
 
 		.site-header {
-			position:relative;
+			pointer-events: all;
+			position:absolute;
+	         top:75px;
+	         left:75px;
+			right:75px;
 			display:block;
 /* 			background-color:rgba(255,255,255,0.3); */
 			height:25%;
@@ -424,9 +446,16 @@ template {
 			transition:all 0.3s ease 0s;
 		}
 		
+			.mobile-nav {
+				display:none;
+			}
+			
 			.header-nav {
 				position:inherit;
 				height:inherit;
+				opacity:1;
+				visibility: visible;
+				width:auto;
 			}
 			
 			.header-brand {
@@ -470,7 +499,8 @@ template {
 
 					.header-nav-menu li a:hover {
 						background-color:rgba(0,0,0,0.7);
-						transition:all 0.3s ease 0s;
+						padding:4px 20px 11px;
+						transition:all 0.5s ease 0s;
 					}
 			
 					.header-nav-menu li.topmenu-item {
@@ -530,12 +560,18 @@ template {
 					}
 		
 		.site-main {
+			pointer-events: auto;
 			position:relative;
 			display:block;
 /* 			background-color:rgba(255,255,255,0.5); */
 			z-index:5;
 			height:75%;
 			
+		}
+		
+		.page-template-directors .site-main,
+		.page-template-digital .site-main {
+			height:100%;
 		}
 
 	.site-footer {
@@ -544,6 +580,7 @@ template {
 /* 		background-color:#ff0; */
 		height:30%;
 		z-index:6;
+		pointer-events: all;
 	}
 
 /*--------------------------------------------------------------
@@ -576,6 +613,37 @@ template {
 	white-space: nowrap;
 }
 
+.slider-move-left,
+.slider-move-right {
+	font-size:42px;
+	padding:4px 20px;
+	background-color:rgba(0,0,0,0.6);
+	color:#fff;
+}
+
+.slider-move-left:hover,
+.slider-move-left:focus,
+.slider-move-right:hover,
+.slider-move-right:focus {
+	background-color:#fff;
+	color:#000;
+	cursor: pointer;
+}
+
+.slider-move-left {
+	position:absolute;
+	top:50%;
+	left:45px;
+	z-index:1000;
+}
+
+.slider-move-right {
+	position:absolute;
+	top:50%;
+	right:45px;
+	z-index:1000;
+}
+
 .site-slide-single {
 	position:relative;
 	float:left;
@@ -587,7 +655,10 @@ template {
 	top:0px;
 	left:0px;
 	height:100%;
-	width:auto;
+	width:100%;
+	background-size:cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 	z-index:-1;
 }
 
@@ -599,6 +670,7 @@ template {
 	width:40%;
 	height:30%;
 	opacity:0;
+	pointer-events: all;
 	z-index:9;
 }
 
@@ -678,8 +750,20 @@ template {
 	box-sizing: border-box;
 }
 
+.digital-left {
+	border:1px solid #fff;
+	padding:5px !important;
+}
+
+.digital-left .digital-inner {
+	border:1px solid #fff;
+	width:100%;
+	height:100%;
+	overflow:scroll;
+}
+
+.digital-left,
 .director-video-wrap {
-	
 	height:100%;
 	padding:0;
 }
@@ -689,10 +773,11 @@ template {
 	height:100%;
 }
 
+.digital-left,
+.digital-right,
 .director-bio {
 	font-family: 'DINProRegular', Arial, sans-serif;
 	color:#fff;
-	
 	height:100%;
 	background-size: cover;
 	background-position: center center;
@@ -700,6 +785,8 @@ template {
 	padding:0;
 }
 
+.digital-right h1,
+.digital-left h1,
 .director-bio h1 {
 	display:inline-block;
 	width:auto;
@@ -712,6 +799,7 @@ template {
 	text-transform: uppercase;
 }
 
+.digital-left ul,
 .director-bio ul {
 	display:block;
 	list-style:none;
@@ -719,6 +807,7 @@ template {
 	margin:20px 0px 0px 20px;
 }
 
+.digital-left li,
 .director-bio li {
 	display:inline-block;
 	list-style:none;
@@ -726,6 +815,11 @@ template {
 	line-height:1.95em;
 	padding:0px 8px;
 	margin:0px 10px 5px 0px;
+}
+
+.digital-left-drop {
+	margin:0px 20px;
+	
 }
 
 .director-video-thumbs-wrap {
@@ -736,22 +830,36 @@ template {
 	overflow:hidden;
 }
 
-.director-video-thumbs {
+.director-video-thumbs-wrap > div {
 	position:relative;
+	transition:all 0.3s ease 0s;
+}
+
+.director-video-thumbs {
+	position:absolute;
+	top:0px;
+	left:0px;
 	margin:0;
 	padding:0;
 	list-style:none;
 	display: block;
-	
 	height:100%;
+	width:100%;
+	overflow:hidden;
 	z-index:10;
 }
 
 .director-video-thumbs li {
 	float:left;
 	height:100%;
-	
 	width:400px;
+	padding:0px;
+}
+
+.director-video-thumbs li:hover {
+	cursor:pointer;
+	opacity:0.8;
+	transition:all 0.3s ease 0s;
 }
 
 .director-video-thumbs li figure {
@@ -763,6 +871,7 @@ template {
 	background-repeat: no-repeat;
 	margin:0;
 	padding:0;
+	transition:background 0.3s ease 0s;
 }
 
 .thumbarrow {
@@ -773,6 +882,8 @@ template {
 	background-color:#000;
 	color:#fff;
 	z-index:1000;
+	opacity:1;
+	visibility: visible;
 	transition: all 0.3s ease 0s;
 }
 
@@ -781,6 +892,12 @@ template {
 	padding:2px 14px;
 	background-color:#fff;
 	color:#000;
+}
+
+.thumbarrow.disable {
+	opacity:0;
+	visibility: hidden;
+	transition: all 0.3s ease 0s;
 }
 
 .thumbarrow.next {
@@ -795,5 +912,157 @@ template {
 	top:80px;
 	z-index:1000;
 }
+
+/*--------------------------------------------------------------
+7.0 Modals
+--------------------------------------------------------------*/
+
+.blank-modal {
+	background-color:rgba(0,0,0,0.7);
+	
+}
+
+.blank-modal .modal-dialog {
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%) !important;
+	width:40%;
+	margin:0;
+}
+
+.blank-modal .modal-dialog .fa {
+	position:absolute;
+	top:10px;
+	right:10px;
+	font-size:26px;
+	line-height:30px;
+	padding:0px 5px;
+	color:#fff;
+	cursor: pointer;
+	transition:all 0.3s ease 0s;
+	z-index:1051;
+}
+
+.blank-modal .modal-dialog .fa:hover {
+	background-color:#fff;
+	color:#000;	
+	transition:all 0.3s ease 0s;
+}
+
+.blank-modal .modal-content {
+	background-color:transparent;
+	box-shadow:unset;
+	text-align:center;
+	border-radius:0px;
+	border:none;
+}
+
+.blank-modal .modal-footer {
+	max-width:640px;
+	background-color:#fff;
+	color:#000;
+	font-size:14px;
+	line-height:26px;
+	font-weight:400;
+	text-align:left;
+	margin:5px auto 0px;
+	border:none;
+	padding:0px 5px;
+	font-family: 'DINProRegular', Arial, sans-serif;
+}
+	
+.blank-modal .modal-footer input {
+	border:none; 
+	background-color:rgb(245,245,245);
+	margin:10px 0px;
+	padding:5px;
+	color:#000;
+	font-family: 'DINProLight', Arial, sans-serif;
+}
+
+.blank-modal .modal-footer input[type="submit"] {
+	
+}
+
+
+/*--------------------------------------------------------------
+8.0 Flock / About
+--------------------------------------------------------------*/
+
+.flock-page:first-child {
+	padding-top:10%;
+}
+.flock-page {
+	display:block;
+	width:80%;
+	margin:0px auto;
+	padding:5% 0px;
+	height:auto;
+}
+
+.flock-page h1 {
+	display:inline-block;
+	background-color:#000;
+	color:#fff;
+	font-size:15px;
+	line-height: 1em;
+	margin-bottom:7px;
+	padding:6px;
+	font-family: 'DINProRegular', Arial, sans-serif;
+	text-transform: :uppercase;
+}
+
+.flock-white {
+	display:inline-block;
+	background-color:#fff;
+	color:#000;
+	font-size:14px;
+	line-height:26px;
+	font-weight:400;
+	margin-bottom:7px;
+	margin-top:5px;
+	padding:0px 5px;
+	font-family: 'DINProRegular', Arial, sans-serif;
+	width:auto;
+}
+
+.flock-col {
+	line-height:normal;
+}
+
+.flock-sec a {
+	display:inline-block;
+	height:auto;
+}
+
+.flock-sec a img {
+	display:inline;
+	margin-left:5px;
+	margin-top:-3px;
+	height:26px;
+	width:auto;
+}
+
+.flock-white.full-width {
+	width:100%;
+}
+
+.flock-white.full-width .col-xs-12 {
+	padding:0px;
+}
+
+.flock-white input {
+	border:none; 
+	background-color:rgb(245,245,245);
+	margin:10px 0px;
+	padding:5px;
+	color:#000;
+	font-family: 'DINProLight', Arial, sans-serif;
+}
+
+.flock-white input[type="submit"] {
+	
+}
+
 
 

@@ -121,6 +121,45 @@ endif;
 
 add_action( 'after_setup_theme', 'petgorilla_setup' );
 
+function petgorilla_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'petg' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'petg' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 1', 'petg' ),
+		'id'            => 'sidebar-2',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'petg' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Content Bottom 2', 'petg' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'petg' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'petgorilla_widgets_init' );
+
+function petg_remove_excerpt() {
+	remove_post_type_support( 'slide', 'excerpt' );
+	remove_post_type_support( 'digital_project', 'excerpt' );
+}
+add_action( 'init', 'petg_remove_excerpt' );
+
 /*
 ========================================
  Scripts Support
@@ -157,6 +196,10 @@ if ( ! function_exists( 'petgorilla_script_que' ) ) :
 	 	wp_enqueue_style('style', get_stylesheet_uri() );
 	 	wp_enqueue_style('petg-css-mediaqueries', get_template_directory_uri() . '/assets/css/media-queries.css', array(), '1.0', 'all' );
 	 	
+	 	if(!is_page()){
+		 	wp_enqueue_style('petg-css-blog', get_template_directory_uri() . '/assets/css/blog.css', array(), '1.0', 'all' );
+	 	}
+	 		 	
 	 	//wp_enqueue_script("json2");
 	 	wp_enqueue_script("jquery"); // jQuery Core
 	 	wp_enqueue_script("jquery-effects-core"); // jQuery UI
@@ -179,5 +222,5 @@ add_action( 'wp_enqueue_scripts', 'petgorilla_script_que' );
 ========================================
 */
 	
-	
+
 	

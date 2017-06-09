@@ -1,9 +1,7 @@
 <?php
 	
 	$id 	= get_the_ID();
-	$taxs 	= get_the_terms($id, 'slider');
 	
-	$id 	= get_the_id();
 	$imgID 	= get_post_thumbnail_id( $id );
 	$img 	= wp_get_attachment_url( $imgID );
 	$spec 	= get_the_terms( $id, 'speciality');
