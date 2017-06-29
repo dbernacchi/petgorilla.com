@@ -59,7 +59,7 @@ $(document).ready(function(){
 					.fadeIn(700, function(){
 						
 						if(winWt > 768 && site_slider_wrap.length > 0) 
-							start_sliders();
+							//start_sliders();
 							$('a.pop-video').pop_video();						
 					});
 			
