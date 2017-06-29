@@ -101,7 +101,7 @@ function(processors)
 			{ /** @type {(HTMLElement|null)} */
 				var s2 = document.getElementById("director-video-thumbs"); /** @type {Element} */
 				var div2 = document.createElement("li"); /** @type {string} */
-				div2.setAttribute('class','col-xs-12');
+				div2.setAttribute('class','col-md-6');
 				var item = '<figure style="background-image: url(' + d.posters.medium.link + ')"><span class="screen-reader-text">' + d.title + "</span></figure>"; /** @type {string} */
 				div2.innerHTML = item;
 				div2.addEventListener("click", function(types)

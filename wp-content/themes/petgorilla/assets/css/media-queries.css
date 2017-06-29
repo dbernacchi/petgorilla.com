@@ -53,7 +53,6 @@
 	
 	.open-desktop .header-nav-menu li a:hover {
 		background-color:rgba(0,0,0,1);
-		cursor:
 		transition:background-color 0.1s ease 0s !important;
 	}
 	
@@ -125,6 +124,24 @@
 */
 @media (max-width: 768px) {
 	
+	.site-band {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	
+	.site-content-contain {
+		top:20px;
+		left:20px;
+		bottom:20px;
+		right:20px;
+	}
+	.site-content,
+	.site-main {
+		pointer-events: none;
+	}
+	
 	.mobile-brand {
 		display:block;
 	}
@@ -145,7 +162,6 @@
 	
 	.blank-modal .modal-footer {
 		max-width:320px;
-		
 		font-size:16px;
 		line-height:20px;
 		font-weight:400;
@@ -180,8 +196,8 @@
 	.page-template-directors .site-content,
 	.page-template-digital .site-content {
 		padding-top:0px;
-		height:auto;
-		min-height:70%;
+/* 		height:auto; */
+/* 		min-height:70%; */
 	}
 	
 	.page-template-directors .site-content .director-wrap,
@@ -226,9 +242,9 @@
 	
 	.page-template-directors .director-video-thumbs li,
 	.page-template-digital .director-video-thumbs li {
-		float:unset;
-		height:250px;
-		width:100%;
+		
+		height:125px;
+		width:50%;
 		padding:0px;
 	}
 	
@@ -285,7 +301,8 @@
 		pointer-events:all;
 		opacity:1;
 		visibility:visible;
-		height:auto;
+		padding-top:180px;
+		height:100%;
 		width:auto;
 		position:absolute;
 		bottom:60px;
@@ -296,9 +313,16 @@
 		z-index:200;
 	}
 	
+	.open-mobile .header-nav-wrap {
+		height:100%;
+		overflow-y:scroll;
+	}
+	
 	.open-mobile .header-nav-menu li.topmenu-item {
 		display:block;
 		margin-bottom:5px;
+		bottom:0px;
+		position:relative;
 	}
 	
 	.open-mobile .header-nav-menu a.topmenu-link {
@@ -331,7 +355,7 @@
 		opacity:1;
 		visibility:visible;
 		white-space:normal;
-		padding:5px 0;
+		padding:5px 0px 0px 20px;
 	}
 	
 	.open-mobile .header-nav-menu li.submenu-item {
@@ -346,6 +370,10 @@
 	
 	.open-mobile .header-brand {
 		display:none;
+	}
+	
+	.site-content-contain {
+		top:100px;
 	}
 
 .site-slider-wrap {
@@ -425,7 +453,10 @@
 		font-family: 'DINProRegular', Arial, sans-serif;
 	}
 	
-	
+	.flock-page {
+		width:99%;
+		
+	}
 }
 
 /*
@@ -506,12 +537,13 @@
 		right:0;
 	}
 	
-	
+}
 
 /*
 **** BREAKPOINT: MEDIUM PORTRAIT DEVICES - DESCENDING
 */
 @media (max-width: 768px) and (orientation: portrait) {
+	
 	.site-band {
 		top:20px;
 		left:20px;
@@ -520,10 +552,11 @@
 	}
 	
 	.site-content-contain {
-		top:20px;
+		top:100px;
 		left:20px;
 		bottom:20px;
 		right:20px;
+		padding:0px 5px;
 	}
 	
 	.site-content {
@@ -532,5 +565,12 @@
 	
 	.site-main {
 		height:100%;
+		width:100%;
+	}
+}
+
+@media (min-width: 1200px) and (min-height:800px) {
+	.flock-page {
+		padding-top:20px !important;
 	}
 }

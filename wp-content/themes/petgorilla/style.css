@@ -517,8 +517,16 @@ template {
 					}
 
 					.header-nav-menu li a:hover {
-						background-color:rgba(0,0,0,0.2);
+						opacity:1;
 						transition:background-color 0.1s ease 0s !important;
+					}
+
+                   .header-nav-menu .submenu-item a:hover {
+						background-color:#444;
+					}
+					
+					.submenu-link:hover {
+						background-color:#444 !important;
 					}
 			
 					.header-nav-menu li.topmenu-item {
@@ -954,7 +962,7 @@ template {
 .blank-modal .modal-dialog .fa {
 	position:absolute;
 	top:10px;
-	right:-20px;
+	right:-30px;
 	font-size:26px;
 	line-height:30px;
 	padding:0px 5px;
@@ -970,7 +978,9 @@ template {
 	transition:all 0.3s ease 0s;
 }
 
-
+.blank-modal .modal-body {
+	border:1px solid #fff;
+}
 
 .blank-modal .modal-content {
 	background-color:transparent;
@@ -984,21 +994,21 @@ template {
 	max-width:640px;
 	background-color:#fff;
 	color:#000;
-	font-size:14px;
+	font-size:16px;
 	line-height:26px;
 	font-weight:400;
 	text-align:left;
 	margin:5px auto 0px;
 	border:none;
-	padding:0px 5px;
+	padding:15px 15px;
 	font-family: 'DINProRegular', Arial, sans-serif;
 }
 	
 .blank-modal .modal-footer input {
 	border:none; 
-	background-color:rgb(245,245,245);
+	background-color:rgb(235,235,235);
 	margin:10px 0px;
-	padding:5px;
+	padding:10px;
 	color:#000;
 	font-family: 'DINProLight', Arial, sans-serif;
 }
@@ -1064,6 +1074,10 @@ template {
 	margin-top:-3px;
 	height:26px;
 	width:auto;
+}
+
+.flock-white form {
+	padding:15px;
 }
 
 .flock-white.full-width {
