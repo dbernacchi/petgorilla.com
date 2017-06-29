@@ -404,10 +404,9 @@ template {
 	left:45px;
 	bottom:45px;
 	right:45px;
-/* 	background-color:#ccc; */
 	padding:0px 30px 30px;
 	background:transparent;
-    overflow-y: scroll;
+    overflow-y: auto;
 	z-index:3;
 	transition:all 0.3s ease 0s;
 }
