@@ -51,6 +51,12 @@
 		transition:all 0.4s ease 0s;
 	}
 	
+	.open-desktop .header-nav-menu li a:hover {
+		background-color:rgba(0,0,0,1);
+		cursor:
+		transition:background-color 0.1s ease 0s !important;
+	}
+	
 	.open-desktop li.activate .dropdown-drawer {
 		height:auto;
 		transition:all 0.4s ease 0.6s;
@@ -85,6 +91,11 @@
 		color:#282828;
 		transition:all 0.3s ease 0;
 	}
+	
+	.blank-modal .modal-body {
+		width:640px;
+		height:320px;;
+	}
 }
 
 /*
@@ -99,6 +110,7 @@
 */
 @media (max-width: 1200px) {
 	
+	
 }
 
 /*
@@ -112,6 +124,42 @@
 **** BREAKPOINT: MEDIUM DEVICES - DESCENDING
 */
 @media (max-width: 768px) {
+	
+	.mobile-brand {
+		display:block;
+	}
+	
+	.blank-modal .modal-dialog {
+		top:20%;
+	}
+	.blank-modal .modal-body {
+		width:320px;
+		height:160px;
+		margin:0px auto;
+	}
+	
+	.blank-modal .modal-content {
+		width:95%;
+		margin:0px auto;
+	}
+	
+	.blank-modal .modal-footer {
+		max-width:320px;
+		
+		font-size:16px;
+		line-height:20px;
+		font-weight:400;
+		margin:5px auto 0px;
+		border:none;
+		padding:10px 15px;
+	}
+	
+	.blank-modal .modal-dialog .fa {
+		position:absolute;
+		top:-30px;
+		right:50%;
+		margin-right:-25px;
+	}
 	
 	.site-header {
 		height:auto;
@@ -253,12 +301,28 @@
 		margin-bottom:5px;
 	}
 	
+	.open-mobile .header-nav-menu a.topmenu-link {
+		background-color:#444 !important;
+		cursor:default;
+	}
+	
+	.open-mobile .header-nav {
+		margin-top:60px;
+	}
+	
+	.open-mobile .header-nav {
+		overflow:scroll;
+		height:100%;
+		
+	}
+	
 	.open-mobile .dropdown-drawer {
 		position:relative;
 		height:auto;
 		top:unset;
 		left:unset;
 		margin-bottom:5px;
+		padding-top:15px;
 	}
 	
 	.open-mobile .header-nav-menu li.topmenu-item ul.submenu {
@@ -272,6 +336,7 @@
 	
 	.open-mobile .header-nav-menu li.submenu-item {
 		margin-right:5px;
+		margin-bottom:10px;
 	}
 	
 	.open-mobile .header-nav-menu li.topmenu-item ul.submenu li a {
@@ -359,7 +424,7 @@
 		line-height:14x;
 		font-family: 'DINProRegular', Arial, sans-serif;
 	}
-
+	
 	
 }
 
@@ -368,6 +433,37 @@
 */
 @media (max-width: 400px) {
 	
+	.blank-modal .modal-dialog {
+		top:20%;
+	}
+	.blank-modal .modal-body {
+		width:320px;
+		height:160px;
+		margin:0px auto;
+	}
+	
+	.blank-modal .modal-content {
+		width:95%;
+		margin:0px auto;
+	}
+	
+	.blank-modal .modal-footer {
+		max-width:320px;
+		
+		font-size:16px;
+		line-height:20px;
+		font-weight:400;
+		margin:5px auto 0px;
+		border:none;
+		padding:10px 15px;
+	}
+	
+	.blank-modal .modal-dialog .fa {
+		position:absolute;
+		top:-30px;
+		right:50%;
+		margin-right:-25px;
+	}
 }
 
 /*
@@ -409,7 +505,8 @@
 		top:0;
 		right:0;
 	}
-}
+	
+	
 
 /*
 **** BREAKPOINT: MEDIUM PORTRAIT DEVICES - DESCENDING

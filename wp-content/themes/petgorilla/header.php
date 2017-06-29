@@ -46,7 +46,9 @@
 		</div>
 		
 		<span class="site-band"></span>
-		
+		<div class="mobile-brand">
+			<a href="/" alt="PET GØRILLA" title="PET GØRILLA"><?php petg_print_custom_logo(); ?></a>
+		</div>
 		<header id="site-header" class="site-header" role="banner">
 			<span id="desktop-nav" class="desktop-nav fa fa-times"></span>
 			<span id="mobile-nav" class="mobile-nav fa fa-bars"></span>
