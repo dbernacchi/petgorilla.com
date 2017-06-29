@@ -48,7 +48,7 @@
 		<span class="site-band"></span>
 		
 		<header id="site-header" class="site-header" role="banner">
-			
+			<span id="desktop-nav" class="desktop-nav fa fa-times"></span>
 			<span id="mobile-nav" class="mobile-nav fa fa-bars"></span>
 			<div class="header-nav">
 				
