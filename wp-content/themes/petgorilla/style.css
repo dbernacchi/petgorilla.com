@@ -517,8 +517,8 @@ template {
 					}
 
 					.header-nav-menu li a:hover {
-						opacity:1;
-						transition:background-color 0.1s ease 0s !important;
+						background-color:#444;
+						
 					}
 
                    .header-nav-menu .submenu-item a:hover {
