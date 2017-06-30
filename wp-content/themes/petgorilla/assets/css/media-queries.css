@@ -138,6 +138,9 @@
 		bottom:20px;
 		right:20px;
 	}
+	.directors {
+		poiner-events
+	}
 	.site-content,
 	.site-main {
 		pointer-events: none;
@@ -189,7 +192,7 @@
 	
 	.page-template-directors .site-content-contain,
 	.page-template-digital .site-content-contain {
-		pointer-events: all;
+		pointer-events: auto !important;
 		overflow:scroll;
 		padding:5px;
 	}
@@ -197,8 +200,15 @@
 	.page-template-directors .site-content,
 	.page-template-digital .site-content {
 		padding-top:0px;
+		pointer-events: auto !important;
 /* 		height:auto; */
 /* 		min-height:70%; */
+	}
+	
+	.page-template-directors .site-main,
+	.page-template-digital .site-main {
+		pointer-events: auto !important;
+
 	}
 	
 	.page-template-directors .site-content .director-wrap,

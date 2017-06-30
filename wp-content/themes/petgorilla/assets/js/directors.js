@@ -106,7 +106,7 @@ function(processors)
 				div2.innerHTML = item;
 				div2.addEventListener("click", function(types)
 				{
-					scroll(0, 0);
+					$('#site-content-contain').scrollTop(0, 0);
 					types.preventDefault();
 					done(key);
 				});

@@ -418,11 +418,11 @@ template {
 	.mobile-brand {
 		display:none;
 		position:absolute;
-		top:65px;
-		right:65px;
+		top:45px;
+		right:45px;
 		width:125px;
 		height:auto;
-		z-index:10;
+		z-index:1000;
 	}
 
 .mobile-brand img {
@@ -518,7 +518,7 @@ template {
 
 					.header-nav-menu li a:hover {
 						background-color:#444;
-						
+						transition:all 0.1s ease 0s !important;
 					}
 
                    .header-nav-menu .submenu-item a:hover {
@@ -544,7 +544,7 @@ template {
 							width:auto;
 							height:100%;
 							padding:1px 17px 3px;
-							transition:all 0.3s ease 0.3s;
+							transition:all 0.3s ease 0s;
 						}
 			
 /*

@@ -64,19 +64,28 @@ $(document).ready(function(){
 	
 	$(window).resize(function(){
 		
-		winHt = parseInt($(window).height()),
-		winWt = parseInt($(window).width());
+		slide_timer_paused = false;
 		
-		if(winWt <= 768){
-			slide_timer_paused = true;
-		}else{
-			slide_timer_paused = false;
-		}
+		clearInterval(slide_timer);
 		
-		if(slides.length > 0){
-			set_slide_sizes(slides, true);
-		}
-		
+		var wait = setTimeout(function(){
+			
+			winHt = parseInt($(window).height()),
+			winWt = parseInt($(window).width());
+			
+			if(slides.length > 0){
+				set_slide_sizes(slides, true);
+			}
+			
+			
+			if(winWt >= 768){
+				start_sliders();
+			}
+			
+			clearTimeout(wait);
+			
+		}, 700);
+
 	});
 	
 
@@ -236,7 +245,9 @@ $(document).ready(function(){
 			slide_timer = setInterval(function(){
 				
 				if(!slide_timer_paused){
-				
+					
+					
+					
 					slide_title_out(prev_slide, function(){
 						
 						if(slide_count > timer_count){
@@ -275,6 +286,37 @@ $(document).ready(function(){
 
 	}
 	
+	function reset_slider(){
+		
+		site_slider_wrap.animate({
+			left: '0px'
+		});
+		
+		slides.each(function(i){
+			
+			if(i === 0)
+				$(this).addClass('active');
+				
+			if(i === 1)
+				$(this).addClass('next');
+				
+			var slide_title = $(this).find('.slider-title');
+			
+			if(winWt <= 768){
+				
+				slide_title.attr('style','');	
+							
+			}else{
+							
+				slide_title.css({
+					opacity: 0,
+					top: '80%'
+				});
+				
+			}
+		});
+	}
+	
 	function set_slide_sizes(slides, reset){
 		
 		var set_slides = function(callback){
@@ -294,26 +336,15 @@ $(document).ready(function(){
 		}
 		
 		if(typeof reset === 'boolean' && reset){
-			
-			slide_timer_paused = true;
-			
+	
 			site_slider_contain.fadeOut(300, function(){
 				
 				set_slides(function(){
 					
 					site_slider_contain.fadeIn(300, function(){
-						slide_timer_paused = false;
 						
-						site_slider_wrap.animate({
-				
-							left:'0px'
-							
-						}, 700, function(){
-							$('.slide-title').css({
-								opacity:0,
-								top:'80%'
-							});
-						});
+						reset_slider();
+						
 					});
 				});
 			});
