@@ -27,6 +27,9 @@
 <body <?php body_class(); ?>>
 	
 	<div id="site" class="site">
+		<div class="watermark">
+			<a href="/" alt="PET GØRILLA" title="PET GØRILLA"><?php petg_print_custom_logo(); ?></a>
+		</div>
 		
 		<div id="site-slider-contain" class="site-slider-contain">
 			<!-- Receives slider info dynamically -->
@@ -50,6 +53,7 @@
 		<div class="mobile-brand">
 			<a href="/" alt="PET GØRILLA" title="PET GØRILLA"><?php petg_print_custom_logo(); ?></a>
 		</div>
+		
 		<header id="site-header" class="site-header" role="banner">
 			<span id="desktop-nav" class="desktop-nav fa fa-times"></span>
 			<span id="mobile-nav" class="mobile-nav fa fa-bars"></span>

@@ -422,13 +422,25 @@ template {
 		right:45px;
 		width:125px;
 		height:auto;
-		z-index:1000;
+		z-index:1001;
 	}
-
+.watermark img, 
 .mobile-brand img {
 	width:100%;
 	height:auto;
 }
+
+	.watermark {
+		display:block;
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:auto;
+		height:25px;
+		margin-top:-13px;
+		margin-left:-185px;
+		z-index:1;
+	}
 
 	.site-content {
 		display:block;
@@ -563,6 +575,10 @@ template {
 						height:0px;
 						width:75vw;
 						transition:all 0.3s ease 0s;
+					}
+					
+					ul.header-nav-menu li:last-child .dropdown-drawer {
+						width:45vw;
 					}
 					
 /*
