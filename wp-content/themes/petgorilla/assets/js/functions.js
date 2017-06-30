@@ -95,7 +95,9 @@ $(document).ready(function(){
 		var exist_lnk = $('li.menu-item.activate'), 
 			exist_lnk_len = exist_lnk.length,
 			is_close_icon = (typeof link === 'undefined' ? true : false),
-			parent = (is_close_icon && exist_lnk_len > 0 ? exist_lnk : link.closest('li'));
+			parent = (is_close_icon && exist_lnk_len > 0 ? exist_lnk : link.closest('li')),
+			href = link.attr('href'),
+			anchor = href.substring(href.indexOf("#")+1);
 			
 		if(parent.hasClass('menu-item-has-children')){
 			
@@ -117,13 +119,35 @@ $(document).ready(function(){
 				site_header.toggleClass('open-desktop');
 				parent.toggleClass('activate');
 			}
+			
+		}else{
+			
+			site_header.toggleClass('open-desktop');
+			parent.toggleClass('activate');
+			
+			console.log(anchor.length > 1 && parent.hasClass('active'))
+			console.log(anchor.length)
+			if(anchor.length > 1 && parent.hasClass('active')){
+				
+				var tag = $('body').find('a[id="'+anchor+'"]'),
+					scrollPos = tag.scrollTop();
+				console.log(tag)
+				console.log(scrollPos)	
+				
+				
+				site_content_contain.scrollTo(0, scrollPos);
+		
+			}
+			
 		}
+		
+		
 
 	}
 	
 	if(winWt >= 768){
 		
-		var navlnks = $('a.topmenu-link');
+		var navlnks = $('a.topmenu-link, a.submenu-link');
 		
 		navlnks.on('click', function(event){
 			

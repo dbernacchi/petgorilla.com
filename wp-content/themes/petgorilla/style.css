@@ -1003,7 +1003,7 @@ template {
 	padding:15px 15px;
 	font-family: 'DINProRegular', Arial, sans-serif;
 }
-	
+.flock-white input ,
 .blank-modal .modal-footer input {
 	border:none; 
 	background-color:rgb(235,235,235);
@@ -1088,6 +1088,7 @@ template {
 	padding:0px;
 }
 
+/*
 .flock-white input {
 	border:none; 
 	background-color:rgb(245,245,245);
@@ -1096,6 +1097,7 @@ template {
 	color:#000;
 	font-family: 'DINProLight', Arial, sans-serif;
 }
+*/
 
 .flock-white input[type="submit"] {
 	
