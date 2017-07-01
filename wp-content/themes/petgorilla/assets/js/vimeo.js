@@ -9,33 +9,39 @@ $(document).ready(function(){
 		videos = video_wrap.find('li'),
 		first = videos.first();
 		
+	var winHt = parseInt($(window).height()),
+		winWt = parseInt($(window).width());
+		
 	get_box_detail(first);
 	
 	var vid_wrap_len = parseInt(video_wrap.width()),
 		video_cnt = videos.length,
 		vid_len = parseFloat(vid_wrap_len/video_cnt);
 		
-	console.log(vid_len)
+	
 	
 	
 	$(window).resize(function(){
 		
 		clearTimeout(wait_dig);
 		var wait_dig = setTimeout(function(){
+			
+			if(winWt > 768){
 		
-			vid_wrap_len = parseInt(video_wrap.width()),
-			video_cnt = videos.length,
-			vid_len = parseFloat(vid_wrap_len/video_cnt);
-			
-			videos.each(function(){
-			
-				if(vid_len < 400){
-					$(this).css({
-						width: vid_len+'px'
-					
-					});
-				}
-			});
+				vid_wrap_len = parseInt(video_wrap.width()),
+				video_cnt = videos.length,
+				vid_len = parseFloat(vid_wrap_len/video_cnt);
+				
+				videos.each(function(){
+				
+					if(vid_len < 400){
+						$(this).css({
+							width: vid_len+'px'
+						
+						});
+					}
+				});
+			}
 			
 		}, 700);
 		
@@ -43,15 +49,15 @@ $(document).ready(function(){
 	
 	videos.each(function(){
 		
-		if(vid_len < 400){
-			$(this).css({
-				width: vid_len+'px'
-			});
+		if(winWt > 768){
+			if(vid_len < 400){
+				$(this).css({
+					width: vid_len+'px'
+				});
+			}
 		}
 		
-		
 		$(this).on('click', function(){
-			
 			
 			get_box_detail($(this));
 			var lt_box_dropped = drop.find('span');
@@ -60,6 +66,7 @@ $(document).ready(function(){
 						
 			$(window).scrollTop(0, 0);
 		});
+		
 	});
 	
 	function get_box_detail(obj){
