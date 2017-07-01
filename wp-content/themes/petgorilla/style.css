@@ -448,6 +448,8 @@ template {
 		z-index:1;
 	}
 	
+	
+	.page-template-general .watermark,
 	.page-template-directors .watermark,
 	.page-template-digital .watermark {
 		display:none;
