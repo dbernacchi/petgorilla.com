@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 $clientID       = '6cf757449bec0f3e958ec32f01934eb19e84b43d';
 $clientSecret   = 'CgXADjw6UPvpBWeHUgy3fBS1n8LKS2vSBTcglzU8i5j5Dn97LqQzMtJQ3HdXeOjx4ZlobmNw9Qm8qXDngvUa/suBmHTUnfJBkc1yWtKb7XovP7UwTcGohQYzKE9hGSPT';
-$redirectURI    = 'http://localhost:8888';
+$redirectURI    = 'http://staging2.petgorilla.com';
 //$redirectURI    = 'http://petgorilla.com';
 $access_token   = '582f63ac14a12aed0da54755d3bb9dc7';
 $cacheDir       = dirname(__FILE__) .'/cache/';
@@ -54,7 +54,9 @@ if (!is_writeable($cacheDir)) {
 
 $cacheFile = rtrim($cacheDir, '/') .'/vimeo.'. md5($access_token .'.'. $albumID) .'.json';
 
-if (!is_file($cacheFile) || filemtime($cacheFile) < (time() - (3600 * 6))) {
+//if (!is_file($cacheFile) || filemtime($cacheFile) < (time() - (3600 * 6))) {
+if(!is_file($cacheFile)){
+
     $url = 'https://api.vimeo.com/me/albums/'. $albumID .'/videos/?'. http_build_query(array(
         'page'              => 1,
         'per_page'          => 50,
