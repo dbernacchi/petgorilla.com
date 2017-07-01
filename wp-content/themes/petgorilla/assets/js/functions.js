@@ -1,4 +1,5 @@
 var $ = jQuery.noConflict();
+
 $(document).ready(function(){
 	
 	var winHt = parseInt($(window).height()),
@@ -21,6 +22,7 @@ $(document).ready(function(){
 		desktop_toggle = $('#desktop-nav'),
 		site_header = $('#site-header');
 		
+/*
 	var interval = setInterval(function() {
 		
 	    if(document.readyState === 'complete') {
@@ -29,61 +31,76 @@ $(document).ready(function(){
 	        pageInit();
 	    }    
 	}, 100);
+*/
 	
 	var pageInit = function(){
+		
+		
+/*
+		var img = new Image();
+
+		img.load(function(
+			img.src=‘https://x.com/myimg.jpg';
+		);
+*/
+
+
 				
 		if(slides.length > 0){
 			
-			site_slider_wrap
-				.appendTo(site_slider_contain);
+			var url = site_slider_wrap.find('section .slide-background:first').css('background-image');
 			
-			siteload = setTimeout(function(){
-				
-				slide_count = parseInt(slides.length-1);
-				
-				if(winWt > 768){
-					
-					set_slide_sizes(slides);
-					
-					site_slider_wrap
-						.fadeIn(700, function(){
-							
-							set_hover_pause();
-							
-							if(winWt > 768 && site_slider_wrap.length > 0) 
-								start_sliders();
-														
-						});
-				
-				}else{
-					site_slider_wrap
-						.fadeIn(700, function(){
-							set_dragend();
-						});
-				}
+			url.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
 			
+			url = url.match(/\((.*?)\)/)[1].replace(/('|")/g,'');
+			
+			var img = new Image();
+			
+			img.src=url;
+			
+			img.onload = function(){
 				
-				$('a.pop-video').pop_video();	
+				site_slider_wrap
+					.appendTo(site_slider_contain);
+				
+					
+					slide_count = parseInt(slides.length-1);
+					
+					if(winWt > 768){
+						
+						set_slide_sizes(slides);
+						
+						site_slider_wrap
+							.fadeIn(700, function(){
+								
+								set_hover_pause();
+								
+								if(winWt > 768 && site_slider_wrap.length > 0) 
+									start_sliders();
+															
+							});
+					
+					}else{
+						site_slider_wrap
+							.fadeIn(700, function(){
+								set_dragend();
+							});
+					}
+				
+					
+					$('a.pop-video').pop_video();
+				
+			};			
+			
+						
 				
 
-/*
-        					
-				if(winWt <= 768){
-					
-					set_dragend();
-					
-					
-				}
-*/
-			
-				
-				
-			}, 2000);	
-			//clearTimeout(siteload);
 		}
 		
 		bind_links_to_desktop_nav();
 	};
+	
+	pageInit();
 	
 	$(window).resize(function(){
 		
