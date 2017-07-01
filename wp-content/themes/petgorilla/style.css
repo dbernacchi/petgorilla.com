@@ -834,7 +834,7 @@ template {
 	border:1px solid #fff;
 	width:100%;
 	height:100%;
-	overflow:scroll;
+	overflow:auto;
 }
 
 .digital-left,
@@ -939,8 +939,12 @@ template {
 .director-video-thumbs li {
 	float:left;
 	height:100%;
-	width:400px;
+	max-width:400px;
 	padding:0px;
+}
+
+.page-template-digital .director-video-thumbs li {
+/* 	width: */
 }
 
 .director-video-thumbs li:hover {
@@ -1085,6 +1089,7 @@ template {
 	margin:0px auto;
 	padding:5% 0px;
 	height:auto;
+	padding-bottom:95vh;
 }
 
 .flock-page h1 {

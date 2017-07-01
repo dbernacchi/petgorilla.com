@@ -11,9 +11,23 @@ $(document).ready(function(){
 		
 	get_box_detail(first);
 	
+	var vid_wrap_len = parseInt(video_wrap.width()),
+		video_cnt = videos.length,
+		vid_len = parseFloat(vid_wrap_len/video_cnt);
+		
+	console.log(vid_len)
+	
 	videos.each(function(){
+		console.log(vid_len)
+		if(vid_len < 400){
+			$(this).css({
+				width: vid_len+'px'
+			});
+		}
+		
 		
 		$(this).on('click', function(){
+			
 			
 			get_box_detail($(this));
 			var lt_box_dropped = drop.find('span');

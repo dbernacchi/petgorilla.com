@@ -284,7 +284,7 @@ $(document).ready(function(){
 				
 			}else{
 				
-				if(!hasClass('topmenu-link')){
+				if( $this.hasClass('submenu-link')){
 					toggle_mobile_menu();
 				}
 			}
@@ -488,7 +488,6 @@ $(document).ready(function(){
 					width: winWt,
 					height: winHt
 				});
-				
 				
 			});
 			
