@@ -30,7 +30,7 @@
 		<div class="watermark">
 			<a href="/" alt="PET GØRILLA" title="PET GØRILLA"><?php petg_print_custom_logo(); ?></a>
 		</div>
-		
+		<div id="scroll-to-top" class="scroll-to-top"><span class="fa fa-arrow-circle-o-up"></span></div>
 		<div id="site-slider-contain" class="site-slider-contain">
 			<!-- Receives slider info dynamically -->
 <!--

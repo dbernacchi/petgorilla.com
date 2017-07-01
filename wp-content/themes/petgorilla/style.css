@@ -361,6 +361,11 @@ template {
 4.0 Boundary
 --------------------------------------------------------------*/
 
+.scroll-to-top {
+		
+		display:none;
+	}
+
 .site {
 	position:fixed;
 	top:0px;
@@ -443,6 +448,8 @@ template {
 		z-index:1;
 	}
 	
+	
+	.page-template-general .watermark,
 	.page-template-directors .watermark,
 	.page-template-digital .watermark {
 		display:none;
@@ -676,6 +683,19 @@ template {
 	color:#fff;
 }
 
+.slide-overlay {
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.8);
+	opacity:0;
+	visibility: hidden;
+	z-index: 6;
+	transition: all 0.3s ease 0s;
+}
+
 .slider-move-left:hover,
 .slider-move-left:focus,
 .slider-move-right:hover,
@@ -715,9 +735,9 @@ template {
 	background-position: center center;
 	background-repeat: no-repeat;
 	z-index:-1;
+	-webkit-transition: background-image 0.3s ease-in-out;
+	transition: background-image 0.3s ease-in-out;
 }
-
-
 
 .slider-title {
 	position:absolute;
@@ -816,7 +836,7 @@ template {
 	border:1px solid #fff;
 	width:100%;
 	height:100%;
-	overflow:scroll;
+	overflow:auto;
 }
 
 .digital-left,
@@ -921,8 +941,12 @@ template {
 .director-video-thumbs li {
 	float:left;
 	height:100%;
-	width:400px;
+	max-width:400px;
 	padding:0px;
+}
+
+.page-template-digital .director-video-thumbs li {
+/* 	width: */
 }
 
 .director-video-thumbs li:hover {
@@ -1067,6 +1091,7 @@ template {
 	margin:0px auto;
 	padding:5% 0px;
 	height:auto;
+	padding-bottom:95vh;
 }
 
 .flock-page h1 {
