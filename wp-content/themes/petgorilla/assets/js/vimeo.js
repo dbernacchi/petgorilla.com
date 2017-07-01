@@ -18,6 +18,8 @@ $(document).ready(function(){
 			get_box_detail($(this));
 			var lt_box_dropped = drop.find('span');
 			
+			$('#site-content-contain').scrollTop(0,0);
+			
 			if(lt_box_dropped.length > 0){
 				
 			}

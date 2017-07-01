@@ -361,6 +361,11 @@ template {
 4.0 Boundary
 --------------------------------------------------------------*/
 
+.scroll-to-top {
+		
+		display:none;
+	}
+
 .site {
 	position:fixed;
 	top:0px;
