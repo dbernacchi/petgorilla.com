@@ -92,7 +92,8 @@ $(document).ready(function(){
 					
 										var overlay = $(this).find('.slide-overlay');
 										
-										$(this).on('click focus', function(){
+										
+										$(this).on('touchstart click focus', function(){
 											
 											var $this = $(this);
 											
