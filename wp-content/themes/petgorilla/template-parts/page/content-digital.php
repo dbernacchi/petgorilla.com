@@ -11,7 +11,12 @@
 	
 	?>
 	<div class="directors">
-		<div class="director-wrap">
+		<div class="director-wrap clearfix">
+			
+			<div id="digital-right" class="digital-right col-xs-12 col-md-6" style="background-image: url(<?php //echo $img ?>);">
+		    	<h1 style="display:none;"></h1>
+	             <div id="digital-right-drop" class="digital-right-drop"></div>
+	        </div>
 	
 	        <div class="digital-left col-xs-12 col-md-6">
 		        <div class="digital-inner">
@@ -33,10 +38,7 @@
 		        </div>
 	        </div>
 	
-	        <div id="digital-right" class="digital-right col-xs-12 col-md-6" style="background-image: url(<?php echo $img ?>);">
-		        	
-	             <div id="digital-right-drop" class="digital-right-drop"></div>
-	        </div>
+	        
 		</div>
 	</div>
 	

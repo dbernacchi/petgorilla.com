@@ -430,6 +430,7 @@ template {
 	height:auto;
 }
 
+
 	.watermark {
 		display:block;
 		position:absolute;
@@ -440,6 +441,11 @@ template {
 		margin-top:-13px;
 		margin-left:-185px;
 		z-index:1;
+	}
+	
+	.page-template-directors .watermark,
+	.page-template-digital .watermark {
+		display:none;
 	}
 
 	.site-content {
@@ -711,6 +717,8 @@ template {
 	z-index:-1;
 }
 
+
+
 .slider-title {
 	position:absolute;
 	top:80%;
@@ -834,6 +842,13 @@ template {
 	padding:0;
 }
 
+.digital-right h1 {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:999;
+}
+
 .digital-right h1,
 .digital-left h1,
 .director-bio h1 {
@@ -869,6 +884,11 @@ template {
 .digital-left-drop {
 	margin:0px 20px;
 	
+}
+
+.digital-right-drop {
+	width:inherit;
+	height:inherit;
 }
 
 .director-video-thumbs-wrap {

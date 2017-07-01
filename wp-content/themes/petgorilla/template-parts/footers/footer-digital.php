@@ -49,10 +49,8 @@
 						<li id="<?php echo $slide->ID ?>" class="col-xs-12 <?php echo ($i === 1 ? 'active' : ($i === 2 ? 'next' : '') ) ?>" data-link="<?php echo $vidlink ?>">
 							
 							<figure style="background-image:url(<?php echo $img_url ?>)">
-								<span class="screen-reader-text"><?php echo $slide_title ?></span>
+								<span id="title" class="screen-reader-text"><?php echo $slide_title ?></span>
 								<span id="left-box" class="screen-reader-text"><?php echo htmlspecialchars_decode($lft_content) ?></span>
-								<span id="right-box" class="screen-reader-text"><?php echo htmlspecialchars_decode($rt_content) ?></span>
-								<span id="sub-title" class="screen-reader-text"><?php echo $subtitle ?></span>
 								<span id="vid-link" class="screen-reader-text"><?php echo $vidlink ?></span>
 							</figure>						
 						</li>

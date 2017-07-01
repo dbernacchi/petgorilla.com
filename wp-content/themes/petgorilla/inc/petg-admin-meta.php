@@ -148,8 +148,8 @@ if ( ! function_exists( 'petg_custom_meta_boxes' ) ) :
 		add_meta_box('slide-link', __( 'Video Link', 'petg' ), 'slide_link_meta_callback','slide');
 		
 		add_meta_box('project-left-content', __( 'Left Content Box', 'petg' ), 'project_left_content_meta_callback','digital_project');
-		add_meta_box('project-right-content', __( 'Right Content Box', 'petg' ), 'project_right_content_meta_callback','digital_project');
-		add_meta_box('project-subtitle', __( 'Project Sub-Title', 'petg' ), 'project_subtitle_meta_callback','digital_project');
+		//add_meta_box('project-right-content', __( 'Right Content Box', 'petg' ), 'project_right_content_meta_callback','digital_project');
+		//add_meta_box('project-subtitle', __( 'Project Sub-Title', 'petg' ), 'project_subtitle_meta_callback','digital_project');
 		add_meta_box('project-video-link', __( 'Video Link', 'petg' ), 'project_video_link_meta_callback','digital_project');
 		
 	}
@@ -205,19 +205,23 @@ function project_left_content_meta_callback($post){
 
 }
 
+/*
 function project_right_content_meta_callback($post){
 	
 	wp_nonce_field( 'project_right_content_nonce', 'project_right_content_nonce' );
 	wp_editor( htmlspecialchars_decode( get_post_meta($post->ID, '_project_right_content' , true ) ), 'project_right_content', $settings = array('textarea_name'=>'project_right_content') );
 	
 }
+*/
 
+/*
 function project_subtitle_meta_callback($post){
 	
 	wp_nonce_field( 'project_subtitle_nonce', 'project_subtitle_nonce' );
 	$value = get_post_meta( $post->ID, '_project_subtitle', true );
 	echo '<input type="text" style="width:100%;" id="project_subtitle" name="project_subtitle" value="' . esc_attr( $value ) . '" />';
 }
+*/
 
 function project_video_link_meta_callback($post){
 	
@@ -232,7 +236,7 @@ function project_video_link_meta_callback($post){
 
 function save_custom_meta_boxes( $post_id ) {
 	
-	$metaboxes = array('vimeo_id','slide_subtitle','slide_type','slide_link','project_left_content','project_right_content','project_subtitle','project_video_link');
+	$metaboxes = array('vimeo_id','slide_subtitle','slide_type','slide_link','project_left_content','project_video_link');
 	
 	foreach($metaboxes as $val){
 		

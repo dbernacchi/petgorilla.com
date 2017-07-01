@@ -205,7 +205,7 @@ if ( ! function_exists( 'petgorilla_script_que' ) ) :
 	 	wp_enqueue_script("jquery-effects-core"); // jQuery UI
 	 	//wp_enqueue_script('jquery-masonry' ); // jQuery Masonry Library
 	 	wp_enqueue_script('petg-js-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '20130605', true ); // Bootstrap/Normalize Library
-	 	
+	 	wp_enqueue_script('petg-js-dragend', get_template_directory_uri() . '/assets/js/dragend.js', array( 'jquery' ), '20170531', true );
 	 	
 	 	wp_enqueue_script('petg-js-functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20170531', true ); // Main Functions
 		wp_enqueue_script('petg-js-ganalytics', get_template_directory_uri() . '/assets/js/analytics.js',array('petg-js-functions'), '20170531', true); // Google Analytics

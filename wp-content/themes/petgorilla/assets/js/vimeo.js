@@ -4,6 +4,7 @@ $(document).ready(function(){
 		left_wrap = $('#digital-left'),
 		drop = $('#digital-left-drop'),
 		rt_drop = $('#digital-right-drop'),
+		rt_h1 = right_wrap.find('h1'),
 		video_wrap = $('#digital-video-thumbs'),
 		videos = video_wrap.find('li'),
 		first = videos.first();
@@ -26,11 +27,14 @@ $(document).ready(function(){
 	function get_box_detail(obj){
 		
 		var lt_box = obj.find('#left-box').clone(),
-			rt_box = obj.find('#right-box').clone(),
-			sub_title = obj.find('#sub-title').html(),
-			vid_lnk = obj.find('#vid-link'),
-			bg_url = first.find('figure').css('background-image');
-		
+			title = obj.find('#title').html(),
+			vid_lnk = obj.find('#vid-link').text(),
+			bg_url = obj.find('figure').css('background-image');
+			
+		rt_h1
+			.text(title);
+			
+				
 		drop.fadeOut(600, function(){
 			
 			drop.html(lt_box);
@@ -42,61 +46,121 @@ $(document).ready(function(){
 		});
 			
 		rt_drop.fadeOut(600, function(){
-			
-			rt_drop.html(rt_box);
-			
-			rt_box.removeClass('screen-reader-text');
-			rt_box.attr('id','right-box-dropped');
-			
-			rt_drop.fadeIn(600);
+						
+			if(vid_lnk != ''){
+				
+				var vid_frame = get_vid(vid_lnk);
+				
+				rt_drop.html(vid_frame);
+				
+				var in_h1 = setTimeout(function(){
+					
+					rt_h1.fadeIn(300, function(){
+						
+						var out_h1 = setTimeout(function(){
+					
+							rt_h1.fadeOut(300);
+							clearTimeout(out_h1);
+							
+						}, 700);
+						
+					});
+					
+					rt_drop.fadeIn(600);
+					
+					clearTimeout(in_h1);
+
+				}, 300);
+
+			}else{
+				
+				right_wrap.fadeOut(600, function(){
+					
+					right_wrap.attr('style','background-image:'+bg_url);
+					right_wrap.fadeIn(600, function(){
+						rt_h1.fadeIn(300);
+					});
+					
+				});
+				
+			}
+
 		});
 		
+/*
 		right_wrap.fadeOut(600, function(){
 			right_wrap.attr('style','background-image:'+bg_url);
 			right_wrap.fadeIn(600);
 		});
+*/
 		
 		
 		
 	}
-/*
-	$.get(window._src + "?album=" + window._albumID, function(arr){
+	
+	function get_vid(href){
 		
-		$(arr).each(function(i){
+		var query = "player-digital-right-drop-" + Math.round(1E3 * Math.random()),
+			player_lnk = href+'&api=1&player_id=' + query
+			vidWt =  parseInt(right_wrap.width()),
+			vidHt =  parseInt(right_wrap.height());
+		
+		var vid_frame = document.createElement("iframe"),
+			attrs = {
+				id : query,
+				src : href+'&api=1&player_id=' + query,
+				width : vidWt,
+				height : vidHt,
+				style : 'embed-responsive-item',
+				allowfullscreen : "allowfullscreen"
+			}, attr;
 			
-			var vid = $(this)[0],
-				item = $('<li><figure style="background-image: url(' + vid.posters.medium.link + ')"><span class="screen-reader-text">' + vid.title + '</span></figure></li>');
+		for (attr in attrs) {
+			vid_frame.setAttribute(attr, attrs[attr]);
+		}
+		
+		return vid_frame;
+	}
+		
+/*
+		$.get(window._src + "?album=" + window._albumID, function(arr){
+			
+			$(arr).each(function(i){
 				
-			if(i === 0){
-				
-				var vid_frame = document.createElement("iframe"),
-					query = "player-" + vid.id + "-" + Math.round(1E3 * Math.random()),
-					attrs = {
-						id : query,
-						src : "//player.vimeo.com/video/" + img.id + "?api=1&amp;player_id=" + query,
-						width : w,
-						height : dialogHeight,
-						frameborder : 0,
-						allowfullscreen : "allowfullscreen"
-					},
-					attr;
+				var vid = $(this)[0],
+					item = $('<li><figure style="background-image: url(' + vid.posters.medium.link + ')"><span class="screen-reader-text">' + vid.title + '</span></figure></li>');
 					
-				for (attr in attrs) {
-					vid_frame.setAttribute(attr, attrs[attr]);
+				if(i === 0){
+					
+					var vid_frame = document.createElement("iframe"),
+						query = "player-" + vid.id + "-" + Math.round(1E3 * Math.random()),
+						attrs = {
+							id : query,
+							src : "//player.vimeo.com/video/" + img.id + "?api=1&amp;player_id=" + query,
+							width : w,
+							height : dialogHeight,
+							frameborder : 0,
+							allowfullscreen : "allowfullscreen"
+						},
+						attr;
+						
+					for (attr in attrs) {
+						vid_frame.setAttribute(attr, attrs[attr]);
+					}
+					
+					video_wrap.append(vid_frame);
+	
 				}
 				
-				video_wrap.append(vid_frame);
-
-			}
+				$(item).appendTo(thumb_wrap);
+			});
 			
-			$(item).appendTo(thumb_wrap);
+		}, 'json')
+		.fail(function(){
+			console.log('fail');
 		});
-		
-	}, 'json')
-	.fail(function(){
-		console.log('fail');
-	});
 */
+	
 	
 /*
 	function set_thumbs(arr){

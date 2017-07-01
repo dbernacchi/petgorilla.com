@@ -11,9 +11,10 @@
 			<div class="modal-footer">
 				
 					Find out about more about our latest projects by subscribing to our newsletter.
-					<?php echo do_shortcode('[ufbl form_id="1"]'); ?>
+					
 				
 			</div>
 		</div>
 	</div>
 </script>
+<div id="template-form" style="display:none;"><?php echo do_shortcode('[ufbl form_id="1"]'); ?></div>

@@ -14,7 +14,8 @@ $(document).ready(function(){
 		site_slider_wrap = $('#site-slider-wrap'),
 		site_content_contain = $('#site-content-contain'),
 		site_content = $('#site-content'),
-		slides = site_slider_wrap.find('.site-slide-single');
+		slides = site_slider_wrap.find('.site-slide-single'),
+		wait;
 		
 	var mobile_toggle = $('#mobile-nav'),
 		desktop_toggle = $('#desktop-nav'),
@@ -40,27 +41,47 @@ $(document).ready(function(){
 				
 				slide_count = parseInt(slides.length-1);
 				
-				if(winWt > 768 && site_slider_wrap.length > 0){
+				if(winWt > 768){
 					
 					set_slide_sizes(slides);
+					
+					site_slider_wrap
+						.fadeIn(700, function(){
+							
+							set_hover_pause();
+							
+							if(winWt > 768 && site_slider_wrap.length > 0) 
+								start_sliders();
+														
+						});
 				
+				}else{
+					site_slider_wrap
+						.fadeIn(700, function(){
+							set_dragend();
+						});
 				}
 			
-				site_slider_wrap
-					.fadeIn(700, function(){
-						
-						set_hover_pause();
-						
-						if(winWt > 768 && site_slider_wrap.length > 0) 
-							start_sliders();
-							$('a.pop-video').pop_video();						
-					});
+				
+				$('a.pop-video').pop_video();	
+				
+
+/*
+        					
+				if(winWt <= 768){
+					
+					set_dragend();
+					
+					
+				}
+*/
 			
-				clearTimeout(siteload);
+				
 				
 			}, 2000);	
-			
+			//clearTimeout(siteload);
 		}
+		
 		bind_links_to_desktop_nav();
 	};
 	
@@ -68,30 +89,91 @@ $(document).ready(function(){
 		
 		slide_timer_paused = false;
 		
-		clearInterval(slide_timer);
+		clearTimeout(wait);
 		
-		var wait = setTimeout(function(){
+		wait = setTimeout(function(){
+			
+			
+			clearInterval(slide_timer);
 			
 			winHt = parseInt($(window).height()),
 			winWt = parseInt($(window).width());
 			
-			if(slides.length > 0){
-				set_slide_sizes(slides, true);
+			//console.log(slides)
+
+			if(winWt > 768){
+				
+				site_slider_wrap.dragend({
+					destroy: true
+				});
+				
+				setTimeout(function(){
+					//console.log(slides)
+					if(slides.length > 0){
+						set_slide_sizes(slides);
+					}
+			
+					site_slider_wrap
+						.fadeIn(700, function(){
+							
+							set_hover_pause();
+							
+							if(winWt > 768 && site_slider_wrap.length > 0) 
+								start_sliders();
+														
+						});
+					
+				}, 2000);
+				
+				
+				
+			}else{
+				
+				reset_slider();
+				
+				setTimeout(function(){
+					
+					set_dragend();
+				}, 2000);
+				
+				
+				
+		      
 			}
 			
-			if(winWt >= 768){
-				start_sliders();
-			}
-			
-			clearTimeout(wait);
-			
+			bind_links_to_desktop_nav();
+
 		}, 700);
 		
-		bind_links_to_desktop_nav();
-
+		
 	});
 	
-
+	 function set_dragend(){
+		 
+		 itemsInPage = 3;
+					
+		if(winWt < 768 && winHt < 425){
+			itemsInPage = 2;
+		}else{
+			
+			if(winWt <= 768 && winWt > 600){
+				itemsInPage = 5;
+			}else if(winWt < 599 && winWt > 425){
+				itemsInPage = 4;
+			}else if(winWt < 425){
+				itemsInPage = 3;
+			}
+			
+		}
+	//console.log(itemsInPage)
+		site_slider_wrap.dragend({
+			pageContainer: site_content_contain,
+			pageClass: "site-slide-single",
+			itemsInPage: itemsInPage,
+			direction: 'vertical',
+		});
+		 
+	 }
 	
 	function open_desktop_nav(link, event){
 		
@@ -99,9 +181,7 @@ $(document).ready(function(){
 			exist_lnk_len = exist_lnk.length,
 			is_close_icon = (typeof link === 'undefined' ? true : false),
 			parent = (is_close_icon && exist_lnk_len > 0 ? exist_lnk : link.closest('li'));
-			
-			
-			console.log(parent)
+	
 		if(parent.hasClass('menu-item-has-children')){
 			
 			if(typeof event != 'undefined'){
@@ -125,20 +205,10 @@ $(document).ready(function(){
 			
 		}else{
 			
-			 var href = link.attr('href'),
-			 	 anchor = href.substring(href.indexOf("#")+1);
-			
+			 
 			site_header.toggleClass('open-desktop');
 			parent.toggleClass('activate');
 
-			if(anchor.length > 1 && parent.hasClass('active')){
-				
-				var tag = $('body').find('a[id="'+anchor+'"]'),
-					scrollPos = tag.scrollTop();
-				
-				site_content_contain.scrollTo(0, scrollPos);
-		
-			}
 			
 		}
 
@@ -159,7 +229,7 @@ $(document).ready(function(){
 		navlnks.on('click', function(event){
 			
 			var $this = $(this);
-	console.log(winWt)
+	
 			if(winWt >= 768){
 				
 				open_desktop_nav($this, event);
@@ -167,21 +237,8 @@ $(document).ready(function(){
 				
 			}else{
 				
-/*
-				if(anchor.length > 1 && parent.hasClass('active')){
 				
-					var tag = $('body').find('a[id="'+anchor+'"]'),
-						scrollPos = tag.scrollTop();
-					
-					site_content_contain.scrollTo(0, scrollPos);
-			
-				}
-*/
-/*
-				console.log('toggle');
 				toggle_mobile_menu();
-*/
-				
 			}
 		});
 	}
@@ -208,7 +265,8 @@ $(document).ready(function(){
 
 	function start_sliders(){
 		
-				
+		
+		
 		var move_slider_forward = function(callback){
 			
 			site_slider_wrap.animate({
@@ -280,6 +338,13 @@ $(document).ready(function(){
 				
 			});
 		}
+		
+/*
+		if(site_slider_wrap.is('hidden')){
+			console.log('yes')
+			site_slider_wrap.fadeIn(100);
+		}
+*/
 		
 		var prev_slide = site_slider_wrap.find('section:eq(0)'),
 			next_slide = site_slider_wrap.find('section:eq(1)');
@@ -370,7 +435,8 @@ $(document).ready(function(){
 		var set_slides = function(callback){
 			
 			slides.each(function(i){
-					
+				
+				console.log($(this));
 				$(this).css({
 					width: winWt,
 					height: winHt
@@ -381,7 +447,13 @@ $(document).ready(function(){
 				}
 				
 			});
+			
+			if(typeof callback === 'function'){
+				callback();
+			}
 		}
+		
+		//console.log(typeof reset === 'boolean' && reset)
 		
 		if(typeof reset === 'boolean' && reset){
 	
@@ -396,6 +468,7 @@ $(document).ready(function(){
 					});
 				});
 			});
+			
 		}else{
 			
 			set_slides();
@@ -442,6 +515,10 @@ $(document).ready(function(){
 				id = lnk.data('id'),
 				type = lnk.data('type');
 				
+			var form = $('#template-form');
+			
+			form.css({display: 'block'});
+				
 			var query = "player-" + id + "-" + Math.round(1E3 * Math.random()),
 				player_lnk = (type === 'vimeo' ? href+'&api=1&player_id=' + query : href);
 			
@@ -458,6 +535,8 @@ $(document).ready(function(){
 			for (attr in attrs) {
 				vid_frame.setAttribute(attr, attrs[attr]);
 			}
+			
+			template.find('.modal-footer').append(form);
 			
 			template_body.append(vid_frame);
 					
