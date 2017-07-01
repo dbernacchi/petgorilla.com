@@ -16,6 +16,7 @@ $(document).ready(function(){
 		site_content_contain = $('#site-content-contain'),
 		site_content = $('#site-content'),
 		slides = site_slider_wrap.find('.site-slide-single'),
+		scrolltotop = $('#scroll-to-top'),
 		wait;
 		
 	var mobile_toggle = $('#mobile-nav'),
@@ -92,7 +93,6 @@ $(document).ready(function(){
 					
 										var overlay = $(this).find('.slide-overlay');
 										
-										
 										$(this).on('touchstart click focus', function(){
 											
 											var $this = $(this);
@@ -114,6 +114,10 @@ $(document).ready(function(){
 			};			
 
 		}
+		scrolltotop.on('click', function(){
+			
+			site_slider_wrap.scrollTop(0,0);
+		});
 		
 		bind_links_to_desktop_nav();
 	};
@@ -121,6 +125,19 @@ $(document).ready(function(){
 	
 	
 	pageInit();
+	
+	$(site_slider_wrap).scroll(function(){
+		
+		var scrolltop = parseInt(site_slider_wrap.scrollTop());
+		
+		if(scrolltop > 250 && winWt < 768){
+			
+			$('#scroll-to-top').fadeIn(400);
+		}else{
+			$('#scroll-to-top').fadeOut(400);
+		}
+		
+	});
 	
 	$(window).resize(function(){
 		

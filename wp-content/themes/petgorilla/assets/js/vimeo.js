@@ -21,6 +21,8 @@ $(document).ready(function(){
 			if(lt_box_dropped.length > 0){
 				
 			}
+			
+			$(window).scrollTop(0, 0);
 		});
 	});
 	
