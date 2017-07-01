@@ -676,6 +676,19 @@ template {
 	color:#fff;
 }
 
+.slide-overlay {
+	position:absolute;
+	top:0px;
+	left:0px;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.8);
+	opacity:0;
+	visibility: hidden;
+	z-index: 6;
+	transition: all 0.3s ease 0s;
+}
+
 .slider-move-left:hover,
 .slider-move-left:focus,
 .slider-move-right:hover,
@@ -715,9 +728,9 @@ template {
 	background-position: center center;
 	background-repeat: no-repeat;
 	z-index:-1;
+	-webkit-transition: background-image 0.3s ease-in-out;
+	transition: background-image 0.3s ease-in-out;
 }
-
-
 
 .slider-title {
 	position:absolute;

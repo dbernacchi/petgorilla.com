@@ -416,8 +416,8 @@
 	float:unset;
 	display:block;
 	width:100%;
-/* 	max-height:250px; */
-/* 	height:33.33%; */
+	max-height:250px;
+	height:33.33%;
 	transition: all 0.3s ease 0s;
 }
 	
@@ -429,34 +429,64 @@
 		left:unset;
 	}
 	
+/*
 	.site-slide-single:hover .slide-background,
 	.site-slide-single:focus .slide-background {
 		position:relative;
 		background-size:110%, cover;
 		transition: all 0.3s ease 0s;
 	}
+*/
 	
 	.slider-title {
-		top:20%;
-		left:50%;
-		transform: translate(-50%, -10%);
-		width:83%;
-		height:30%;
+		top:25px;
+		left:0px;
+		transform:unset;
+		padding:0px 25px 0px 35px;
+		height:0px;
+		width:0px;
 		opacity:0;
 		visibility: hidden;
 		pointer-events: all;
 		z-index:9;
+		-webkit-transition: all 0.3s ease 0s;
 		transition: all 0.3s ease 0s;
 	}
 	
+	
+	
+	.focused .slide-overlay {
+		opacity:1;
+		visibility: visible;
+		-webkit-transition: all 0.3s ease 0s;
+		transition: all 0.3s ease 0s;
+	}
+	
+	.focused .slider-title {
+		height:auto;
+		width:90%;
+		opacity:1;
+		visibility: visible;
+		-webkit-transition: all 0.3s ease 0s;
+		transition: all 0.3s ease 0s;
+	}
+	
+	.focused .slider-background {
+		background-size:110%, cover;
+		-webkit-transition: background-image 0.3s ease-in-out;
+		transition: background-image 0.3s ease-in-out;
+	}
+	
+/*
 	.site-slide-single:hover .slider-title,
 	.site-slide-single:focus .slider-title {
-		
 		opacity:1;
 		visibility: visible;
 		transition: all 0.3s ease 0s;
 	}
+*/
 	
+/*
 	.site-slide-single:hover .slide-background:after,
 	.site-slide-single:focus .slide-background:after {
 		position:absolute;
@@ -467,16 +497,17 @@
 		z-index: 1000;
 		background-color:rgba(0,0,0,0.4);
 	}
+*/
 	
 	.slider-title h1 {
-		font-size:20px;
+		font-size:18px;
 		padding:5px 6px;
 		letter-spacing:1px;
 		font-family: 'DINProRegular', Arial, sans-serif;
 	}
 	
 	.slider-title h2 {
-		font-size:18px;
+		font-size:16px;
 		padding:5px 6px;
 		letter-spacing:1px;
 		line-height:14x;
@@ -578,6 +609,10 @@
 		height:auto;
 		min-height:unset;
 
+	}
+	
+	.page-template-digital .digital-left {
+		display:none;
 	}
 	
 	.page-template-directors .director-bio {

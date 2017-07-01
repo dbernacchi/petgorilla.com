@@ -49,7 +49,7 @@
 				<h2><?php echo $slide_subtitle ?></h2>
 				<a class="pop-video" href="<?php echo $slide_link ?>" rel="<?php echo $slide_type ?>" data-id="<?php echo $slide->ID ?>" data-type="<?php echo $slide_type ?>">VIEW</a>
 			</div>
-			
+			<span class="slide-overlay"></span>
 			<div class="slide-background" style="background-image:url(<?php echo $img_url ?>);">
 <!-- 					<img src="<?php echo $img_url ?>"> -->
 			</div>
