@@ -946,7 +946,7 @@ template {
 }
 
 .page-template-digital .director-video-thumbs li {
-/* 	width: */
+	max-width:400px;
 }
 
 .director-video-thumbs li:hover {

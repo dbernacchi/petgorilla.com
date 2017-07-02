@@ -162,7 +162,7 @@ $(document).ready(function(){
 				});
 				
 				setTimeout(function(){
-					//console.log(slides)
+					console.log(slides)
 					if(slides.length > 0){
 						set_slide_sizes(slides);
 					}
