@@ -712,11 +712,28 @@
 		min-height:unset;
 	}
 	
-	.page-template-directors .site-content,
-	.page-template-digital .site-content {
+	.page-template-directors .site-content {
 		padding-top:0px;
 		pointer-events: auto !important;
 		min-height:100%;
+	}
+	
+	.page-template-digital .site-footer {
+		height:auto;
+		min-height:unset;
+	}
+	
+	.page-template-digital .site-content {
+		padding-top:0px;
+		pointer-events: auto !important;
+		height:auto !important;
+		max-height:unset;
+	}
+	
+	.page-template-digital .site-main {
+		height:auto;
+		min-height:unset;
+
 	}
 	
 	.site-band {
@@ -751,7 +768,12 @@
 /*
 **** BREAKPOINT: MEDIUM PORTRAIT DEVICES - DESCENDING
 */
-@media (max-width: 320px) and (orientation: portrait) {
+@media (max-width: 321px) and (orientation: portrait) {
+	
+	
+	
+	
+	
 	.page-template-directors .director-video-wrap {
 		min-height:200px;
 	}
