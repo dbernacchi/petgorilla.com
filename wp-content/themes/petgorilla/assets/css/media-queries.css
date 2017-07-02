@@ -207,6 +207,7 @@
 	.page-template-digital .site-content-contain {
 		pointer-events: auto !important;
 		overflow:scroll;
+		-webkit-overflow-scrolling: touch;
 		padding:5px;
 	}
 	
