@@ -941,7 +941,7 @@ template {
 .director-video-thumbs li {
 	float:left;
 	height:100%;
-	max-width:400px;
+/* 	//max-width:400px; */
 	padding:0px;
 }
 

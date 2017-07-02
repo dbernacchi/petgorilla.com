@@ -153,14 +153,10 @@ $(document).ready(function(){
 			winHt = parseInt($(window).height()),
 			winWt = parseInt($(window).width());
 			
-			//console.log(slides)
+			console.log(winWt)
 
 			if(winWt > 768){
-				
-				site_slider_wrap.dragend({
-					destroy: true
-				});
-				
+			
 				setTimeout(function(){
 					console.log(slides)
 					if(slides.length > 0){
