@@ -412,6 +412,7 @@ template {
 	padding:0px 30px 30px;
 	background:transparent;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 	z-index:3;
 	transition:all 0.3s ease 0s;
 }
