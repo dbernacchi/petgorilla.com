@@ -1,3 +1,6 @@
+//reload page on resize
+window.onresize = function(){ location.reload(); }
+
 var $ = jQuery.noConflict();
 
 $(document).ready(function(){
