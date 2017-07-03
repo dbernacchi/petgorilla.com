@@ -22,13 +22,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'petgorillacom_staging2');
+define('DB_NAME', 'petgorillanew');
 
 /** MySQL database username */
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'thaTe2AG');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -65,7 +65,7 @@ define('NONCE_SALT',       '98|5=s6Da@fxSb6O$D]Jq2}qG;RsN%:iO<fcjcQX-yGIqDY Whoe
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'ptgrilla_';
 
 /**
  * For developers: WordPress debugging mode.

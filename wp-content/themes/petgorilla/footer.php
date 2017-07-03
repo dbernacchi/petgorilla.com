@@ -22,9 +22,9 @@
 				
 				if($template === 'directors' || $template === 'digital'){ ?>
 				
-				<footer id="site-footer" class="site-footer" role="contentinfo">
+				<div id="site-footer" class="site-footer" role="contentinfo">
 					<?php get_template_part( 'template-parts/footers/footer', $template ); ?>
-				</footer><!-- #site-footer -->
+				</div><!-- #site-footer -->
 				
 				<?php
 				}

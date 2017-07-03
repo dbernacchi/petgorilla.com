@@ -411,7 +411,8 @@ template {
 	right:45px;
 	padding:0px 30px 30px;
 	background:transparent;
-    overflow-y: auto;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 	z-index:3;
 	transition:all 0.3s ease 0s;
 }
@@ -837,6 +838,7 @@ template {
 	width:100%;
 	height:100%;
 	overflow:auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .digital-left,
@@ -941,12 +943,12 @@ template {
 .director-video-thumbs li {
 	float:left;
 	height:100%;
-	max-width:400px;
+/* 	//max-width:400px; */
 	padding:0px;
 }
 
 .page-template-digital .director-video-thumbs li {
-/* 	width: */
+	max-width:400px;
 }
 
 .director-video-thumbs li:hover {
