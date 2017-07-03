@@ -54,15 +54,17 @@ if (!is_writeable($cacheDir)) {
 
 $cacheFile = rtrim($cacheDir, '/') .'/vimeo.'. md5($access_token .'.'. $albumID) .'.json';
 
-//if (!is_file($cacheFile) || filemtime($cacheFile) < (time() - (3600 * 6))) {
-if(!is_file($cacheFile)){
+if (!is_file($cacheFile) || filemtime($cacheFile) < (time() - (3600 * 6))) {
+//if(!is_file($cacheFile)){
 
     $url = 'https://api.vimeo.com/me/albums/'. $albumID .'/videos/?'. http_build_query(array(
         'page'              => 1,
         'per_page'          => 50,
         'sort'              => 'manual',
+        'access_token'      => $access_token
     ));
 
+    /*
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -76,6 +78,9 @@ if(!is_file($cacheFile)){
     if ($info['http_code'] != 200) {
         die('[]');
     }
+    */
+
+    $result = file_get_contents($url);
 
     $json   = json_decode($result, true);
     $videos = array();
