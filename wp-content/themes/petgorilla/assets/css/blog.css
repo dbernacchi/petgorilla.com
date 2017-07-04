@@ -49,55 +49,55 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *    14.5 - >= 1200px
  * 15.0 - Print
  */
- 
+
  @font-face {
     font-family: 'DINProLight';
-    src: url('assets/fonts/DINProLight.eot');
-    src: url('assets/fonts/DINProLight.eot') format('embedded-opentype'),
-         url('assets/fonts/DINProLight.woff2') format('woff2'),
-         url('assets/fonts/DINProLight.woff') format('woff'),
-         url('assets/fonts/DINProLight.ttf') format('truetype'),
-         url('assets/fonts/DINProLight.svg#DINProLight') format('svg');
+    src: url('../fonts/DINProLight.eot');
+    src: url('../fonts/DINProLight.eot') format('embedded-opentype'),
+         url('../fonts/DINProLight.woff2') format('woff2'),
+         url('../fonts/DINProLight.woff') format('woff'),
+         url('../fonts/DINProLight.ttf') format('truetype'),
+         url('../fonts/DINProLight.svg#DINProLight') format('svg');
 }
 
 @font-face {
     font-family: 'DINProMedium';
-    src: url('assets/fonts/DINProMedium.eot');
-    src: url('assets/fonts/DINProMedium.eot') format('embedded-opentype'),
-         url('assets/fonts/DINProMedium.woff2') format('woff2'),
-         url('assets/fonts/DINProMedium.woff') format('woff'),
-         url('assets/fonts/DINProMedium.ttf') format('truetype'),
-         url('assets/fonts/DINProMedium.svg#DINProMedium') format('svg');
+    src: url('../fonts/DINProMedium.eot');
+    src: url('../fonts/DINProMedium.eot') format('embedded-opentype'),
+         url('../fonts/DINProMedium.woff2') format('woff2'),
+         url('../fonts/DINProMedium.woff') format('woff'),
+         url('../fonts/DINProMedium.ttf') format('truetype'),
+         url('../fonts/DINProMedium.svg#DINProMedium') format('svg');
 }
 
 @font-face {
     font-family: 'DINProBlack';
-    src: url('assets/fonts/DINProBlack.eot');
-    src: url('assets/fonts/DINProBlack.eot') format('embedded-opentype'),
-         url('assets/fonts/DINProBlack.woff2') format('woff2'),
-         url('assets/fonts/DINProBlack.woff') format('woff'),
-         url('assets/fonts/DINProBlack.ttf') format('truetype'),
-         url('assets/fonts/DINProBlack.svg#DINProBlack') format('svg');
+    src: url('../fonts/DINProBlack.eot');
+    src: url('../fonts/DINProBlack.eot') format('embedded-opentype'),
+         url('../fonts/DINProBlack.woff2') format('woff2'),
+         url('../fonts/DINProBlack.woff') format('woff'),
+         url('../fonts/DINProBlack.ttf') format('truetype'),
+         url('../fonts/DINProBlack.svg#DINProBlack') format('svg');
 }
 
 @font-face {
     font-family: 'DINProRegular';
-    src: url('assets/fonts/DINProRegular.eot');
-    src: url('assets/fonts/DINProRegular.eot') format('embedded-opentype'),
-         url('assets/fonts/DINProRegular.woff2') format('woff2'),
-         url('assets/fonts/DINProRegular.woff') format('woff'),
-         url('assets/fonts/DINProRegular.ttf') format('truetype'),
-         url('assets/fonts/DINProRegular.svg#DINProRegular') format('svg');
+    src: url('../fonts/DINProRegular.eot');
+    src: url('../fonts/DINProRegular.eot') format('embedded-opentype'),
+         url('../fonts/DINProRegular.woff2') format('woff2'),
+         url('../fonts/DINProRegular.woff') format('woff'),
+         url('../fonts/DINProRegular.ttf') format('truetype'),
+         url('../fonts/DINProRegular.svg#DINProRegular') format('svg');
 }
 
 @font-face {
     font-family: 'DINProBold';
-    src: url('assets/fonts/DINProBold.eot');
-    src: url('assets/fonts/DINProBold.eot') format('embedded-opentype'),
-         url('assets/fonts/DINProBold.woff2') format('woff2'),
-         url('assets/fonts/DINProBold.woff') format('woff'),
-         url('assets/fonts/DINProBold.ttf') format('truetype'),
-         url('assets/fonts/DINProBold.svg#DINProBold') format('svg');
+    src: url('../fonts/DINProBold.eot');
+    src: url('../fonts/DINProBold.eot') format('embedded-opentype'),
+         url('../fonts/DINProBold.woff2') format('woff2'),
+         url('../fonts/DINProBold.woff') format('woff'),
+         url('../fonts/DINProBold.ttf') format('truetype'),
+         url('../fonts/DINProBold.svg#DINProBold') format('svg');
 }
 
 /**
@@ -522,7 +522,7 @@ textarea:focus {
 	display: block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	letter-spacing: 0.076923077em;
 	line-height: 1.6153846154;
 	margin-bottom: 1.75em;
@@ -577,14 +577,14 @@ input[type="search"].search-field {
  */
 
 a {
-	color: #007acc;
+	color: lawngreen;
 	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #686868;
+	color: lawngreen;
 }
 
 a:focus {
@@ -629,7 +629,7 @@ a:active {
 /**
  * 6.2 - Menus
  */
- 
+
 
 
 .site-header-menu {
@@ -915,9 +915,9 @@ a:active {
 }
 
 .post-navigation .meta-nav {
-	color: #686868;
+	color: lawngreen;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	letter-spacing: 0.076923077em;
 	line-height: 1.6153846154;
 	margin-bottom: 0.5384615385em;
@@ -936,7 +936,7 @@ a:active {
 
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
-	color: #007acc;
+	color: #000;
 }
 
 .post-navigation div + div {
@@ -953,16 +953,7 @@ a:active {
 	position: relative;
 }
 
-.pagination:before,
-.pagination:after {
-	background-color: #1a1a1a;
-	content: "";
-	height: 52px;
-	position: absolute;
-	top:0;
-	width: 52px;
-	z-index: 0;
-}
+
 
 .pagination:before {
 	right: 0;
@@ -993,15 +984,6 @@ a:active {
 	z-index: 1;
 }
 
-.pagination .nav-links:before {
-	content: "\f429";
-	right: -1px;
-}
-
-.pagination .nav-links:after {
-	content: "\f430";
-	right: 55px;
-}
 
 /* reset screen-reader-text */
 .pagination .current .screen-reader-text {
@@ -1010,11 +992,7 @@ a:active {
 
 .pagination .page-numbers {
 	display: none;
-	letter-spacing: 0.013157895em;
-	line-height: 1;
-	margin: 0 0.7368421053em 0 -0.7368421053em;
-	padding: 0.8157894737em 0.7368421053em 0.3947368421em;
-	text-transform: uppercase;
+
 }
 
 .pagination .current {
@@ -1024,59 +1002,26 @@ a:active {
 
 .pagination .prev,
 .pagination .next {
-	background-color: #1a1a1a;
-	color: #fff;
+	background-color: transparent;
+	color: lawngreen;
 	display: inline-block;
-	height: 52px;
+
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
-	position: absolute;
+	vertical-align: top;
 	top: 0;
-	width: 52px;
+
 	z-index: 2;
 }
 
-.pagination .prev:before,
-.pagination .next:before {
-	font-size: 32px;
-	height: 53px;
-	line-height: 52px;
-	position: relative;
-	width: 53px;
-}
-
-.pagination .prev:hover,
-.pagination .prev:focus,
-.pagination .next:hover,
-.pagination .next:focus {
-	background-color: #007acc;
-	color: #fff;
-}
-
-.pagination .prev:focus,
-.pagination .next:focus {
-	outline: 0;
-}
-
 .pagination .prev {
-	right: 54px;
+  left: 0;
 }
 
-.pagination .prev:before {
-	content: "\f430";
-	left: -1px;
-	top: -1px;
-}
 
 .pagination .next {
 	right: 0;
-}
-
-.pagination .next:before {
-	content: "\f429";
-	right: -1px;
-	top: -1px;
 }
 
 .image-navigation,
@@ -1086,7 +1031,7 @@ a:active {
 	color: #686868;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 	margin: 0 7.6923% 2.1538461538em;
 	padding: 1.0769230769em 0;
@@ -1324,7 +1269,7 @@ blockquote:after,
 	display: block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.615384615;
 	margin-bottom: 0.538461538em;
 }
@@ -1344,7 +1289,7 @@ blockquote:after,
 	display: block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-style: normal;
 	line-height: 1.615384615;
 	margin-bottom: 0.538461538em;
@@ -1386,6 +1331,8 @@ blockquote:after,
 
 .site-content {
 	word-wrap: break-word;
+
+
 }
 
 /* Do not show the outline on the skip link target. */
@@ -1461,7 +1408,7 @@ blockquote:after,
 	color: #686868;
 	display: none;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-weight: 400;
 	line-height: 1.0769230769;
 	margin: 0.538461538em 0 0;
@@ -1472,7 +1419,7 @@ blockquote:after,
 	border: 1px solid #d1d1d1;
 	color: #1a1a1a;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	margin: 1.076923077em 0;
 	padding: 0.769230769em;
 }
@@ -1551,7 +1498,7 @@ blockquote:after,
 
 .entry-title a:hover,
 .entry-title a:focus {
-	color: #007acc;
+	color: #000;
 }
 
 .post-thumbnail {
@@ -1810,7 +1757,7 @@ body:not(.search-results) .entry-summary > :last-child,
 .author-bio {
 	color: #686868;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 	margin-bottom: 1.6153846154em;
 	overflow: hidden;
@@ -1824,7 +1771,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	color: #686868;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 	margin-top: 2.1538461538em;
 }
@@ -1860,7 +1807,7 @@ body:not(.search-results) .entry-summary > :last-child,
 	display: block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	letter-spacing: 0.076923077em;
 	line-height: 1.6153846154;
 	margin-bottom: 0.5384615385em;
@@ -1907,7 +1854,7 @@ body.search-no-results .page-header {
 .taxonomy-description {
 	color: #686868;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 }
 
@@ -1931,7 +1878,7 @@ body.search-no-results .page-header {
 	border-radius: 2px;
 	display: inline-block;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	height: 1.8461538462em;
 	line-height: 1.6923076923em;
 	margin-right: 0.3076923077em;
@@ -1968,7 +1915,7 @@ body.search-no-results .page-header {
 .entry-caption {
 	color: #686868;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-style: italic;
 	line-height: 1.6153846154;
 	padding-top: 1.0769230769em;
@@ -2086,7 +2033,7 @@ body.search-no-results .page-header {
 	color: #686868;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 }
 
@@ -2096,7 +2043,7 @@ body.search-no-results .page-header {
 
 .comment-metadata a,
 .pingback .comment-edit-link {
-	color: #686868;
+	color: #fff;
 }
 
 .comment-metadata a:hover,
@@ -2136,7 +2083,7 @@ body.search-no-results .page-header {
 	display: inline-block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1;
 	margin-top: 2.1538461538em;
 	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
@@ -2154,11 +2101,11 @@ body.search-no-results .page-header {
 }
 
 .comment-form label {
-	color: #686868;
+	color: #fff;
 	display: block;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	letter-spacing: 0.076923077em;
 	line-height: 1.6153846154;
 	margin-bottom: 0.5384615385em;
@@ -2173,9 +2120,9 @@ body.search-no-results .page-header {
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-	color: #686868;
+	color: #fff;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 	margin-bottom: 2.1538461538em;
 }
@@ -2252,7 +2199,7 @@ body.search-no-results .page-header {
 .site-info {
 	color: #686868;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	line-height: 1.6153846154;
 }
 
@@ -2369,7 +2316,7 @@ p > video {
 .wp-caption .wp-caption-text {
 	color: #686868;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-style: italic;
 	line-height: 1.6153846154;
 	padding-top: 0.5384615385em;
@@ -2433,7 +2380,7 @@ p > video {
 	color: #686868;
 	display: block;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-style: italic;
 	line-height: 1.6153846154;
 	padding-top: 0.5384615385em;
@@ -2494,7 +2441,7 @@ p > video {
 	color: #686868;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	font-size: 13px;
-	font-size: 0.8125rem;
+	font-size: 1.2rem;
 	font-weight: 400;
 	letter-spacing: 0.076923077em;
 	line-height: 1.6153846154;
@@ -2547,6 +2494,24 @@ p > video {
 	margin-bottom: 0;
 }
 
+.watermark, .slide-static{display: none;}
+
+.posted-on{
+    color: #fff;
+    padding-left: 1px;
+    font-size: 1.2rem;
+
+}
+
+.site-header{
+    height: initial;
+}
+
+.ssba a{
+    color: transparent;
+}
+
+.continue{color: #000;}
 
 /**
  * 14.0 - Media Queries
@@ -2596,13 +2561,13 @@ p > video {
 		bottom: 0;
 	}
 
-	
+
 
 	.site-main {
 		margin-bottom: 5.25em;
 	}
 
-	
+
 
 	.site-branding {
 		margin-top: 1.3125em;
@@ -2801,7 +2766,7 @@ p > video {
  */
 
 @media screen and (min-width: 56.875em) {
-	
+
 
 	.site-header-main {
 		-webkit-align-items: flex-start;
@@ -2974,7 +2939,7 @@ p > video {
 
 	.widget {
 		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: 1.2rem;
 		line-height: 1.6153846154;
 		margin-bottom: 2.230769231em;
 		padding-top: 1.615384615em;
@@ -3011,7 +2976,7 @@ p > video {
 	.widget blockquote cite,
 	.widget blockquote small {
 		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: 1.2rem;
 		line-height: 1.6153846154;
 	}
 
@@ -3022,7 +2987,7 @@ p > video {
 
 	.widget pre {
 		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: 1.2rem;
 		line-height: 1.6153846154;
 		margin-bottom: 1.6153846154em;
 		padding: 0.5384615385em;
@@ -3038,7 +3003,7 @@ p > video {
 	.widget select,
 	.widget textarea {
 		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: 1.2rem;
 		line-height: 1.6153846154;
 	}
 
@@ -3091,7 +3056,7 @@ p > video {
 	.widget h5,
 	.widget h6 {
 		font-size: 13px;
-		font-size: 0.8125rem;
+		font-size: 1.2rem;
 		line-height: 1.6153846154;
 		margin-bottom: 0.9130434783em;
 	}
@@ -3374,7 +3339,7 @@ p > video {
 	}
 
 	body:not(.search-results) article:not(.type-page) .entry-content {
-		
+
 		width: 71.42857144%;
 	}
 
@@ -3809,4 +3774,8 @@ p > video {
 	.widecolumn {
 		padding: 0;
 	}
+}
+
+*{
+    pointer-events: initial!important;
 }

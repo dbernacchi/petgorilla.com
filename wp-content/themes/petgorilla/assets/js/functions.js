@@ -155,12 +155,12 @@ $(document).ready(function(){
 			winHt = parseInt($(window).height()),
 			winWt = parseInt($(window).width());
 
-			console.log(winWt)
+			//console.log(winWt)
 
 			if(winWt > 768){
 
 				setTimeout(function(){
-					console.log(slides)
+					//console.log(slides)
 					if(slides.length > 0){
 						set_slide_sizes(slides);
 					}
