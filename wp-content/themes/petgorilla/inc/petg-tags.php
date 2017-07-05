@@ -9,19 +9,19 @@
  */
 
 //if ( function_exists( 'petg_print_custom_logo' ) ) {
-	
+
 	function petg_print_custom_logo() {
-				
+
 		$logo_id = get_theme_mod( 'custom_logo' );
 		$img = wp_get_attachment_image_src( $logo_id , 'full' );
 		echo '<img src="'.$img[0].'" alt="'.get_option('blogname').'" title="'.get_option('blogname').'" />';
-	
+
 	}
-	
+
 //}
 
 if ( ! function_exists( 'petg_excerpt' ) ) :
-	
+
 	function petg_excerpt( $class = 'entry-summary' ) {
 		$class = esc_attr( $class );
 
@@ -164,5 +164,40 @@ function petg_categorized_blog() {
 		// This blog has only 1 category so petg_categorized_blog should return false.
 		return false;
 	}
+}
+endif;
+
+if ( ! function_exists( 'petg_video' ) ) :
+/**
+ * displays a video
+ *
+ */
+function petg_video() {
+
+	$id = get_the_ID();
+
+	$video_format = get_post_meta($id, 'video_format', true);
+
+	$video_id = get_post_meta($id, 'video_id', true);
+
+	if($video_format == 'youtube'){
+
+		?>
+
+			<iframe src="//www.youtube.com/embed/<?=$video_id?>?wmode=transparent" wmode="Opaque" frameborder="0" allowfullscreen=""  width="500" height="281"></iframe>
+
+		<?php
+
+	} elseif($video_format == 'vimeo') {
+
+		?>
+
+			<iframe src="//player.vimeo.com/video/<?=$video_id?>?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="500" height="281"></iframe>
+
+		<?php
+
+
+	}
+
 }
 endif;

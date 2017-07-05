@@ -38,6 +38,10 @@
 
 	<?php petg_post_thumbnail(); ?>
 
+	<?php petg_video(); ?>
+
+
+
 	<div class="entry-content">
 		<?php
 			the_content();

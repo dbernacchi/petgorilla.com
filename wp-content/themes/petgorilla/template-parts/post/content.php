@@ -37,6 +37,8 @@
 
 	<?php petg_post_thumbnail(); ?>
 
+	<?php petg_video(); ?>
+
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
