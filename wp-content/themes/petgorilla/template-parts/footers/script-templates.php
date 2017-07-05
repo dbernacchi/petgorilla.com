@@ -5,14 +5,24 @@
 			<div class="modal-content">
 				<div class="screen-reader-text" id="video-title">Show Video</div>
 				<div class="modal-body embed-responsive embed-responsive-16by9" id="modal-body">
-					
+
 				</div>
 			</div>
 			<div class="modal-footer">
-				
-					Find out about more about our latest projects by subscribing to our newsletter.
-					
-				
+					Learn more about Pet GØRILLA - Subscribe to our newsletter <a class="pop-video" data-template="#template-modal-subscribe">Subscribe</a>
+			</div>
+		</div>
+	</div>
+</script>
+<script id="template-modal-subscribe" type="text/template">
+	<div class="subscribe-modal modal fade" id="subscribe-modal" tabindex="-1" role="dialog" aria-labelledby="subscribe-title">
+		<div class="modal-dialog" role="document">
+			<span class="fa fa-times" data-dismiss="modal"></span>
+			<div class="modal-content">
+				<div class="screen-reader-text" id="video-title">Show Video</div>
+				<div class="modal-body" id="modal-body">
+					Learn more about the fascinating things happening at PET GØRILLA by subscribing to our newsletter
+				</div>
 			</div>
 		</div>
 	</div>

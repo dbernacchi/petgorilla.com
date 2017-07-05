@@ -47,7 +47,7 @@
 			<div class="slider-title">
 				<h1><?php echo $slide_title ?></h1>
 				<h2><?php echo $slide_subtitle ?></h2>
-				<a class="pop-video" href="<?php echo $slide_link ?>" rel="<?php echo $slide_type ?>" data-id="<?php echo $slide->ID ?>" data-type="<?php echo $slide_type ?>">VIEW</a>
+				<a class="pop-video" href="<?php echo $slide_link ?>" rel="<?php echo $slide_type ?>" data-id="<?php echo $slide->ID ?>" data-type="<?php echo $slide_type ?>" data-template="#template-modal-video">VIEW</a>
 			</div>
 			<span class="slide-overlay"></span>
 			<div class="slide-background" style="background-image:url(<?php echo $img_url ?>);">

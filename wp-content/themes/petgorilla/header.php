@@ -49,7 +49,12 @@
 			?>
 		</div>
 
-		<span class="site-band"></span>
+		<span class="site-band">
+
+			<span id="site-slider-arrow-left" class="site-slider-arrow-left"><span class="fa fa-angle-left"></span></span>
+			<span id="site-slider-arrow-right" class="site-slider-arrow-right"><span class="fa fa-angle-right"></span></span>
+
+		</span>
 		<div class="mobile-brand">
 			<a href="/" alt="PET GØRILLA" title="PET GØRILLA"><?php petg_print_custom_logo(); ?></a>
 		</div>

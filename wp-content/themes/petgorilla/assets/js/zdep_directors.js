@@ -1,5 +1,4 @@
 
-
 !
 function(processors)
 {
@@ -136,110 +135,108 @@ function(processors)
 	/**
 	 * @return {undefined}
 	 */
-	var initialize = function()
-		{ /** @type {(HTMLElement|null)} */
-			var div = document.getElementById("director-video-thumbs"); /** @type {(Node|null)} */
-			var canvas = div.parentNode; /** @type {NodeList} */
-			var codeSegments = div.querySelectorAll("li");
-			if (!(codeSegments.length <= 6))
-			{ /** @type {(CSSStyleDeclaration|null)} */
-				var style = window.getComputedStyle(div); /** @type {number} */
-				newY = parseFloat(style.getPropertyValue("width")) / 6; /** @type {number} */
-				var i = 0;
-				for (; i < codeSegments.length; i++)
-				{
-					codeSegments[i].style.width = 100 / codeSegments.length + "%";
-				}
-				var wrapper = document.createElement("div"); /** @type {string} */
+	var initialize = function(){
 
-				wrapper.style.height = '100%';
-				wrapper.style.width = 16.667 * codeSegments.length + "%";
-				wrapper.appendChild(div);
+		var winHt = parseInt($(window).height()),
+			winWt = parseInt($(window).width());
 
-				canvas.appendChild(wrapper); /** @type {Element} */
+		var div = $("#director-video-thumbs"); /** @type {(Node|null)} */
+		var canvas = div.closest('div'); /** @type {NodeList} */
+		var codeSegments = div.find("li");
 
-				button = document.createElement("span");
-				button.classList.add("thumbarrow");
-				button.classList.add("fa");
-				button.classList.add("fa-angle-left");
-				button.classList.add("prev"); /** @type {Element} */
+			if (winWt > 768){
 
-				node = document.createElement("span");
-				node.classList.add("thumbarrow");
-				node.classList.add("fa");
-				node.classList.add("fa-angle-right");
-				node.classList.add("next"); /** @type {(Node|null)} */
+				/** @type {(CSSStyleDeclaration|null)} */
 
-				canvas.appendChild(button);
-				canvas.appendChild(node);
-				button.addEventListener("click", function()
-				{
-					render(1);
-				});
-				node.addEventListener("click", function()
-				{
-					render(-1);
-				});
-				render(0);
-			}
-
-
-		};
-
-		window.onresize = function(){
-			var dirresize = setTimeout(function(){
-				clearTimeout(dirresize);
-
-				var winHt = parseInt($(window).height()),
-					winWt = parseInt($(window).width());
+				var style = div.width();
+				newY = parseFloat(style / 6);
 
 
 
-				var parent = $('#director-video-thumbs-wrap'),
-					div = $('#director-video-thumbs'),
-					wrap = div.closest('div');
-				var codeSegments = div.find("li");
-				//style = window.getComputedStyle(div);
-				newY = parseFloat(div.width()) / 6;
-
-
-				if(winWt > 768){
-					if(wrap.is('#director-video-thumbs-wrap')){
-						initialize();
-					}else{
-						if (!(codeSegments.length <= 6)){
-							var i = 0;
-							for (; i < codeSegments.length; i++)
-							{
-								codeSegments[i].style.width = 100 / codeSegments.length + "%";
-							}
-							wrap.css({
-								width:'100%',
-								left: '0px'
-							});
-							parent.find('span.thumbarrow..fa-angle-right').fadeOut(300);
-						}
-					}
-
-				}else{
-
-					wrap.css({
-						width:'100%',
-						left: '0px'
-					});
+				if (!(codeSegments.length <= 6)){
 					var i = 0;
-					for (; i < codeSegments.length; i++)
-					{
-						codeSegments[i].style.width = "50%";
+					for (; i < codeSegments.length; i++){
+						codeSegments[i].style.width = 100 / codeSegments.length + "%";
 					}
+				}
+				var wrapper = $("#dyn-thumb-wrap");
+///console.log(wrapper);
+				if(wrapper.length <= 0){
 
-					parent.find('span.thumbarrow.fa-angle-right').fadeOut(300);
-					parent.find('span.thumbarrow.fa-angle-left').fadeOut(300);
+					wrapper = $(document.createElement('div')); /** @type {string} */
+					wrapper.attr("id","dyn-thumb-wrap");
+					wrapper.addClass('dyn-thumb-wrap');
+					wrapper.append(div);
 				}
 
-			}, 700);
+				wrapper.css({
+					height: '100%',
+					width: 16.667 * codeSegments.length + "%"
+				});
 
+				//wrapper.style.width = 16.667 * codeSegments.length + "%";
+				canvas.append(wrapper); /** @type {Element} */
+
+				button = $('#director-btn-left');
+				node = $('#director-btn-right');
+
+				if(button.length <= 0){
+					button = $(document.createElement("span"));
+					button.attr("id","director-btn-left");
+					button.addClass("thumbarrow fa fa-angle-left prev");
+					canvas.append(button);
+
+					button.on("click", function(){
+
+						render(1);
+					});
+					// button.addClass("fa");
+					// button.addClass("fa-angle-left");
+					// button.addClass("prev");
+				}
+
+				if(node.length <= 0){
+					node = $(document.createElement("span"));
+					node.attr("id","director-btn-right");
+					node.addClass("thumbarrow fa fa-angle-right next");
+					canvas.append(node);
+
+					node.on("click", function(){
+
+						render(1);
+					});
+					// node.classList.add("fa");
+					// node.classList.add("fa-angle-right");
+					// node.classList.add("next"); /** @type {(Node|null)} */
+				}
+
+				// }else{
+				//
+				// 	button.fadeIn(300);
+				// 	node.fadeIn(300);
+				// }
+
+				// $(window).resize(function(){
+				//
+				// 	if(winWt > 768){
+				// 		button.fadeOut(300);
+				// 		node.fadeOut(300);
+				// 	}else{
+				// 		button.fadeIn(300);
+				// 		node.fadeIn(300);
+				// 	}
+				// });
+
+				render(0);
+			}else{
+				codeSegments.each(function(){
+					$(this).css('width','50%');
+				})
+
+			}
 		};
+
+
 	/**
 	 * @param {number} rows
 	 * @return {?}
@@ -248,7 +245,10 @@ function(processors)
 		{ /** @type {(HTMLElement|null)} */
 			var div = document.getElementById("director-video-thumbs"); /** @type {NodeList} */
 			var lis = div.querySelectorAll("li");
-			return disable += rows, disable > 0 ? void disable-- : disable < 6 - lis.length ? void disable++ : (disable >= 0 ? button.classList.add("disable") : button.classList.remove("disable"), disable <= 6 - lis.length ? node.classList.add("disable") : node.classList.remove("disable"), void(div.parentNode.style.left = disable * newY + "px"));
+			console.log(div.parentNode.style.left);
+			console.log(disable);
+			console.log(rows);
+			return disable += rows, disable > 0 ? void disable-- : disable < 6 - lis.length ? void disable++ : (disable >= 0 ? button.addClass("disable") : button.removeClass("disable"), disable <= 6 - lis.length ? node.addClass("disable") : node.removeClass("disable"), void(div.parentNode.style.left = disable * newY + "px"));
 		};
 	/**
 	 * @param {Object} img
