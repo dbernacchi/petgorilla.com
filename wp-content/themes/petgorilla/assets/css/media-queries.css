@@ -93,7 +93,7 @@
 	}
 
 	.blank-modal .modal-body {
-		width:640px;
+		width:560px;
 		height:320px;;
 	}
 }
@@ -162,12 +162,14 @@
 		display:block;
 	}
 
+	.subscribe-modal .modal-dialog,
 	.blank-modal .modal-dialog {
 		transform:unset !important;
 		top:20%;
+		width:280px;
 	}
 	.blank-modal .modal-body {
-		width:320px;
+		width:280px;
 		height:160px;
 		margin:0px auto;
 	}
@@ -178,6 +180,35 @@
 	}
 
 	.blank-modal .modal-footer {
+		max-width:280px;
+		background-color:#000;
+		color:#fff;
+		text-transform: uppercase;
+		font-size:11px;
+		font-weight:normal;
+		font-style:italic;
+		text-align:center;
+		margin:5px auto 0px;
+		border:none;
+		padding:10px 8px;
+		letter-spacing:1.1px;
+		line-height:13px;
+		font-family: 'DINProLight', Arial, sans-serif;
+	}
+
+	.subscribe-modal .modal-body {
+	    background-color:#000;
+		color:#999;
+		font-size:12px;
+
+		font-style:italic;
+		text-align:left;
+	    letter-spacing:1.2px;
+		font-family: 'DINProRegular', Arial, sans-serif;
+		padding:20px 20px;
+	}
+
+	/*.blank-modal .modal-footer {
 		max-width:320px;
 		font-size:16px;
 		line-height:20px;
@@ -185,8 +216,8 @@
 		margin:5px auto 0px;
 		border:none;
 		padding:10px 15px;
-	}
-
+	}*/
+	.subscribe-modal .modal-dialog .fa,
 	.blank-modal .modal-dialog .fa {
 		position:absolute;
 		top:-30px;
@@ -581,13 +612,14 @@
 		margin-left:-90px;
 		z-index:1;
 	}
-
+	
+	.subscribe-modal .modal-dialog .fa
 	.blank-modal .modal-dialog {
 		top:unset;
 		margin-top:50px;
 	}
 	.blank-modal .modal-body {
-		width:320px;
+		width:280px;
 		height:160px;
 		margin:0px auto;
 	}
@@ -598,7 +630,7 @@
 	}
 
 	.blank-modal .modal-footer {
-		max-width:320px;
+		max-width:280px;
 
 		font-size:16px;
 		line-height:20px;
@@ -607,7 +639,7 @@
 		border:none;
 		padding:10px 15px;
 	}
-
+	.subscribe-modal .modal-dialog .fa,
 	.blank-modal .modal-dialog .fa {
 		position:absolute;
 		top:-30px;
