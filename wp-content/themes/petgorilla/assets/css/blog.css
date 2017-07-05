@@ -577,14 +577,14 @@ input[type="search"].search-field {
  */
 
 a {
-	color: lawngreen;
+	color: #fff;
 	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: lawngreen;
+	color: #fff;
 }
 
 a:focus {
