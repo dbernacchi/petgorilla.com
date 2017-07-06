@@ -17,28 +17,20 @@
  *
  * @package WordPress
  */
-
  date_default_timezone_set('America/Los_Angeles');
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'petgorillanew');
-
+define('DB_NAME', 'petgorillacom_staging2');
 /** MySQL database username */
 define('DB_USER', 'root');
-
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
-
+define('DB_PASSWORD', 'thaTe2AG');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
-
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -56,17 +48,14 @@ define('AUTH_SALT',        'i1+n`4-=1NsM|+m*m{$3^7Yp=:Hc)ARBO3P,f:w9wNMGn`<Fgdbm
 define('SECURE_AUTH_SALT', 'A7s!b34rHtJm`JpGDwZNxBo}z*A=K|Op4Z}//1zqE]X_uj^_^~FhN9z nldRR]{z');
 define('LOGGED_IN_SALT',   '_<J]*/QJ@BrwC[G(i8)Yh,3GMX?Hgg;e ;oG]oUgJZZo$q1*:Rj0f;SX$?&_]iRj');
 define('NONCE_SALT',       '98|5=s6Da@fxSb6O$D]Jq2}qG;RsN%:iO<fcjcQX-yGIqDY Whoe-]y915[cM1=]');
-
 /**#@-*/
-
 /**
  * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'ptgrilla_';
-
+$table_prefix  = 'wp_';
 /**
  * For developers: WordPress debugging mode.
  *
@@ -80,12 +69,9 @@ $table_prefix  = 'ptgrilla_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
-
 /* That's all, stop editing! Happy blogging. */
-
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
