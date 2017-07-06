@@ -1,14 +1,4 @@
-$(window).resize(function(){
-	
-	
-		clearTimeout(wait_dig);
-		var wait_dig = setTimeout(function(){
-			if(winWt > 768){
-				initialize();
-			}
-		});
-	
-});
+
 
 !
 function(processors)
@@ -114,7 +104,7 @@ function(processors)
 			{ /** @type {(HTMLElement|null)} */
 				var s2 = document.getElementById("director-video-thumbs"); /** @type {Element} */
 				var div2 = document.createElement("li"); /** @type {string} */
-				
+
 /*
 				if(winWt <= 768){
 					div2.setAttribute('class','col-md-6');
@@ -122,7 +112,7 @@ function(processors)
 					div2.setAttribute('class','col-xs-12');
 				}
 */
-				
+
 				var item = '<figure style="background-image: url(' + d.posters.medium.link + ')"><span class="screen-reader-text">' + d.title + "</span></figure>"; /** @type {string} */
 				div2.innerHTML = item;
 				div2.addEventListener("click", function(types)
@@ -132,11 +122,11 @@ function(processors)
 					done(key);
 				});
 				s2.appendChild(div2);
-				
-				if(winWt > 768){
-					initialize();
-				}
-				
+
+				// if(winWt > 768){
+				// 	initialize();
+				// }
+
 			}
 		}; /** @type {number} */
 	var disable = 0; /** @type {number} */
@@ -157,29 +147,29 @@ function(processors)
 				newY = parseFloat(style.getPropertyValue("width")) / 6; /** @type {number} */
 				var i = 0;
 				for (; i < codeSegments.length; i++)
-				{ 
+				{
 					codeSegments[i].style.width = 100 / codeSegments.length + "%";
-				} 
+				}
 				var wrapper = document.createElement("div"); /** @type {string} */
-				
+
 				wrapper.style.height = '100%';
 				wrapper.style.width = 16.667 * codeSegments.length + "%";
 				wrapper.appendChild(div);
-				
+
 				canvas.appendChild(wrapper); /** @type {Element} */
-				
+
 				button = document.createElement("span");
 				button.classList.add("thumbarrow");
 				button.classList.add("fa");
 				button.classList.add("fa-angle-left");
 				button.classList.add("prev"); /** @type {Element} */
-				
+
 				node = document.createElement("span");
 				node.classList.add("thumbarrow");
 				node.classList.add("fa");
 				node.classList.add("fa-angle-right");
 				node.classList.add("next"); /** @type {(Node|null)} */
-				
+
 				canvas.appendChild(button);
 				canvas.appendChild(node);
 				button.addEventListener("click", function()
@@ -192,9 +182,64 @@ function(processors)
 				});
 				render(0);
 			}
-		};
-		
 
+
+		};
+
+		window.onresize = function(){
+			var dirresize = setTimeout(function(){
+				clearTimeout(dirresize);
+
+				var winHt = parseInt($(window).height()),
+					winWt = parseInt($(window).width());
+
+
+
+				var parent = $('#director-video-thumbs-wrap'),
+					div = $('#director-video-thumbs'),
+					wrap = div.closest('div');
+				var codeSegments = div.find("li");
+				//style = window.getComputedStyle(div);
+				newY = parseFloat(div.width()) / 6;
+
+
+				if(winWt > 768){
+					if(wrap.is('#director-video-thumbs-wrap')){
+						initialize();
+					}else{
+						if (!(codeSegments.length <= 6)){
+							var i = 0;
+							for (; i < codeSegments.length; i++)
+							{
+								codeSegments[i].style.width = 100 / codeSegments.length + "%";
+							}
+							wrap.css({
+								width:'100%',
+								left: '0px'
+							});
+							parent.find('span.thumbarrow..fa-angle-right').fadeOut(300);
+						}
+					}
+
+				}else{
+
+					wrap.css({
+						width:'100%',
+						left: '0px'
+					});
+					var i = 0;
+					for (; i < codeSegments.length; i++)
+					{
+						codeSegments[i].style.width = "50%";
+					}
+
+					parent.find('span.thumbarrow.fa-angle-right').fadeOut(300);
+					parent.find('span.thumbarrow.fa-angle-left').fadeOut(300);
+				}
+
+			}, 700);
+
+		};
 	/**
 	 * @param {number} rows
 	 * @return {?}
