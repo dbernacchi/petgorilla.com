@@ -591,15 +591,17 @@ $(document).ready(function(){
 		});
 	}
 
-	var handleTemplate = function(name){
-		var template = $(name);
-		return template.html();
-	};
+
 
 
 
 
 });
+
+var handleTemplate = function(name){
+	var template = $(name);
+	return template.html();
+};
 
 $.fn.pop_video = function(){
 
