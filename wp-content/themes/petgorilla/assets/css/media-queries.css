@@ -164,8 +164,8 @@
 
 	.subscribe-modal .modal-dialog,
 	.blank-modal .modal-dialog {
-		transform:unset !important;
-		top:20%;
+		transform:none !important;
+		top:30%;
 		width:280px;
 		margin:0px auto;
 	}
