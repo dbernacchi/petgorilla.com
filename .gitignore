@@ -1,4 +1,3 @@
 .*
 /wp-content/wp-uploads/*
-wp-config.php
-.gitignore
+/wp-config.php
