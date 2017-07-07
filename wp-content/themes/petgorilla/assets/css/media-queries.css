@@ -846,7 +846,13 @@
 @media (max-width: 321px) and (orientation: portrait) {
 
 
-
+    .subscribe-modal .modal-dialog,
+	.blank-modal .modal-dialog {
+		transform:tanslate(0,-25%) !important;
+		top:50%;
+		width:280px;
+		margin:0px auto;
+	}
 
 
 	.page-template-directors .director-video-wrap {
