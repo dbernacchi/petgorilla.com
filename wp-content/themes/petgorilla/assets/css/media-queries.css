@@ -162,9 +162,9 @@
 
 	.subscribe-modal .modal-dialog,
 	.blank-modal .modal-dialog {
-		top:50%;
+
 		width:280px;
-		margin:-80px auto 0px;
+		margin:50% auto 0px;
 	}
 	.blank-modal .modal-body {
 		width:280px;
