@@ -118,6 +118,8 @@ $(document).ready(function(){
 		});
 
 		bind_links_to_desktop_nav();
+
+		$('a.pop-video').pop_video();
 	};
 
 	pageInit();
@@ -186,8 +188,6 @@ $(document).ready(function(){
 		}, 700);
 
 	});
-
-	$('a.pop-video').pop_video();
 
 	function open_desktop_nav(link, event){
 
