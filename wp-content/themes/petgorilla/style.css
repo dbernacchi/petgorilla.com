@@ -1129,7 +1129,7 @@ template {
 	font-family: 'DINProLight', Arial, sans-serif;
 }
 
-
+.btn-subscribe,
 .blank-modal .modal-footer a {
 	border-radius:1px;
 	letter-spacing:1.2px;
