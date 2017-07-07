@@ -111,7 +111,7 @@ $(document).ready(function(){
 			};
 
 		}
-		$('a.pop-video').pop_video();
+
 		scrolltotop.on('click', function(){
 
 			site_slider_wrap.scrollTop(0,0);
@@ -123,6 +123,8 @@ $(document).ready(function(){
 
 
 	pageInit();
+
+	$('a.pop-video').pop_video();
 
 	$(site_slider_wrap).scroll(function(){
 
