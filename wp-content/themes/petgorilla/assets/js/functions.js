@@ -120,11 +120,7 @@ $(document).ready(function(){
 		bind_links_to_desktop_nav();
 	};
 
-
-
 	pageInit();
-
-	$('a.pop-video').pop_video();
 
 	$(site_slider_wrap).scroll(function(){
 
@@ -191,33 +187,7 @@ $(document).ready(function(){
 
 	});
 
-/*
-	 function set_dragend(){
-
-		 itemsInPage = 3;
-
-		if(winWt < 768 && winHt < 425){
-			itemsInPage = 2;
-		}else{
-
-			if(winWt <= 768 && winWt > 600){
-				itemsInPage = 5;
-			}else if(winWt < 599 && winWt > 425){
-				itemsInPage = 4;
-			}else if(winWt < 425){
-				itemsInPage = 3;
-			}
-
-		}
-			site_slider_wrap.dragend({
-				pageContainer: site_content_contain,
-				pageClass: "site-slide-single",
-				itemsInPage: itemsInPage,
-				direction: 'vertical',
-			});
-
-	 }
-*/
+	$('a.pop-video').pop_video();
 
 	function open_desktop_nav(link, event){
 
