@@ -39,13 +39,25 @@
 
 	<?php petg_video(); ?>
 
+	<?php
+	if(!petg_get_video()){
+
+		petg_image();
+
+	}
+
+	?>
+
+
 	<div class="entry-content">
 		<?php
 			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'petg' ),
-				get_the_title()
-			) );
+			if(!get_the_excerpt()){
+				the_content( sprintf(
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'petg' ),
+					get_the_title()
+				) );
+			}
 
 			echo '<a class="continue" href="' . esc_url( get_permalink() ) . '">Continue reading...</a>';
 

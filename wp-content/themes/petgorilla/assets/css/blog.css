@@ -915,7 +915,7 @@ a:active {
 }
 
 .post-navigation .meta-nav {
-	color: lawngreen;
+	color: #fff;
 	font-size: 13px;
 	font-size: 1.2rem;
 	letter-spacing: 0.076923077em;
@@ -1003,7 +1003,7 @@ a:active {
 .pagination .prev,
 .pagination .next {
 	background-color: transparent;
-	color: lawngreen;
+	color: #fff;
 	display: inline-block;
 
 	margin: 0;
@@ -1655,7 +1655,7 @@ a.post-thumbnail:focus {
 }
 
 body:not(.search-results) .entry-summary {
-	color: #686868;
+	color: #000;
 	font-size: 19px;
 	font-size: 1.1875rem;
 	line-height: 1.4736842105;
@@ -2513,6 +2513,9 @@ p > video {
 
 .continue{color: #000;}
 
+article img{
+    padding-bottom: 10px;
+}
 /**
  * 14.0 - Media Queries
  */

@@ -23,7 +23,11 @@
 
         $url = $_SERVER['REQUEST_URI'];
 
-        $paged = end(explode('/', rtrim($url, '/')));
+        $trimmed = rtrim($url, '/');
+
+        $exploded = explode('/', $trimmed);
+        
+        $paged = end($exploded);
 
         if(!$paged){
           $paged = 1;

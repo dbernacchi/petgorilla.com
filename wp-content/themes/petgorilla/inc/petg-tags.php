@@ -167,12 +167,12 @@ function petg_categorized_blog() {
 }
 endif;
 
-if ( ! function_exists( 'petg_video' ) ) :
+if ( ! function_exists( 'petg_get_video' ) ) :
 /**
- * displays a video
+ * gets a video
  *
  */
-function petg_video() {
+function petg_get_video() {
 
 	$id = get_the_ID();
 
@@ -182,21 +182,52 @@ function petg_video() {
 
 	if($video_format == 'youtube'){
 
-		?>
-
-			<iframe src="//www.youtube.com/embed/<?=$video_id?>?wmode=transparent" wmode="Opaque" frameborder="0" allowfullscreen=""  width="500" height="281"></iframe>
-
-		<?php
+		return '<iframe src="//www.youtube.com/embed/'.$video_id.'?wmode=transparent" wmode="Opaque" frameborder="0" allowfullscreen=""  width="500" height="281"></iframe>';
 
 	} elseif($video_format == 'vimeo') {
 
-		?>
+		return '<iframe src="//player.vimeo.com/video/'.$video_id.'?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="500" height="281"></iframe>';
 
-			<iframe src="//player.vimeo.com/video/<?=$video_id?>?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="500" height="281"></iframe>
+	}
 
-		<?php
+}
+endif;
 
+if ( ! function_exists( 'petg_video' ) ) :
+/**
+ * displays a video
+ *
+ */
+function petg_video() {
 
+	print petg_get_video();
+
+}
+endif;
+
+if ( ! function_exists( 'petg_image' ) ) :
+/**
+ * displays an image
+ *
+ */
+function petg_image() {
+
+	$id = get_the_ID();
+
+	$image = get_post_meta($id, 'image', true);
+
+	if(!$image && has_post_thumbnail( $id )) {
+
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
+		if(count($thumbnail_src)){
+
+			$image = $thumbnail_src[0];
+
+		}
+	}
+
+	if($image){
+		print '<img src="'.$image.'" width="500"></img>';
 	}
 
 }

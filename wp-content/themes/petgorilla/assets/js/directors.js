@@ -263,27 +263,39 @@ function(processors)
 			var query = "player-" + img.id + "-" + Math.round(1E3 * Math.random());
 			var attrs = {
 				id: query,
-				src: "//player.vimeo.com/video/" + img.id + "?api=1&amp;player_id=" + query,
+				src: "https://player.vimeo.com/video/" + img.id + "?autoplay=1&amp;player_id=" + query,
 				width: w,
 				height: dialogHeight,
-				frameborder: 0,
+				style: 'embed-responsive-item',
 				allowfullscreen: "allowfullscreen"
 			};
 			var attr;
 			for (attr in attrs)
 			{
 				el.setAttribute(attr, attrs[attr]);
+
 			}
+
 			id.appendChild(el);
 			self = $f(el);
 			self.addEvent("ready", function(dataAndEvents)
 			{
+
 				self.addEvent("finish", function(dataAndEvents)
 				{
 					oncomplete();
 				});
-				self.api("play");
+
+
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				 	//can't autoplay on mobile
+				} else {
+					self.api("play");
+				}
+
+
 			});
+
 		};
 	/**
 	 * @return {undefined}

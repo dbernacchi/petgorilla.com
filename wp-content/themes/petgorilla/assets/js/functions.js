@@ -1,12 +1,28 @@
-//reload page on resize
-window.onresize = function(){ location.reload(); }
-
 var $ = jQuery.noConflict();
 
 $(document).ready(function(){
 
 	var winHt = parseInt($(window).height()),
 		winWt = parseInt($(window).width());
+
+	// Resize Event
+	var $window = $(window);
+	$window.resize(function(){
+
+			// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+			if ($window.width() != winWt) {
+
+					// Update the window width for next time
+					winWt = $window.width();
+
+					location.reload();
+
+			}
+
+			// Otherwise do nothing
+
+	});
+
 
 	var siteload,
 		slide_timer,
@@ -399,7 +415,7 @@ $(document).ready(function(){
 		function run_slide_interval(){
 
 			//slide_timer = setInterval(function(){
- 				console.log(timer_count)
+ 				//console.log(timer_count)
 
 				if(timer_count === slide_count){
 					site_slider_arrow_left.fadeOut(700);
@@ -625,7 +641,7 @@ $(document).ready(function(){
 
 			var show_modal = function(){
 
-				console.log(template.attr('id'));
+				//console.log(template.attr('id'));
 				if(template.attr('id') === 'subscribe-modal'){
 
 					var form = $('#template-form');
@@ -648,6 +664,7 @@ $(document).ready(function(){
 					keyboard: true,
 					show: true
 				});
+
 			};
 
 			template.on('show.bs.modal', function (e) {

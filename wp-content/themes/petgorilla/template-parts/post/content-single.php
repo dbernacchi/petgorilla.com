@@ -36,7 +36,8 @@
 
 	<?php petg_excerpt(); ?>
 
-	<?php petg_post_thumbnail(); ?>
+	<?php petg_image(); ?>
+
 
 	<?php petg_video(); ?>
 

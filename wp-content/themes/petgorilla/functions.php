@@ -196,7 +196,7 @@ if ( ! function_exists( 'petgorilla_script_que' ) ) :
 	 	wp_enqueue_style('style', get_stylesheet_uri() );
 	 	wp_enqueue_style('petg-css-mediaqueries', get_template_directory_uri() . '/assets/css/media-queries.css', array(), '1.0', 'all' );
 
-	 	if(!is_page() || get_post_field( 'post_name', get_post() ) == 'blog'){
+	 	if(!is_page() || get_post_field( 'post_name', get_post() ) == 'blog' || get_post_field( 'post_name', get_post() ) == 'privacy-policy'){
 		 	wp_enqueue_style('petg-css-blog', get_template_directory_uri() . '/assets/css/blog.css', array(), '1.0', 'all' );
 	 	}
 
@@ -214,6 +214,52 @@ if ( ! function_exists( 'petgorilla_script_que' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'petgorilla_script_que' );
+
+if ( ! function_exists( 'petgorilla_add_opengraph_doctype' ) ) :
+	//Adding the Open Graph in the Language Attributes
+	function petgorilla_add_opengraph_doctype( $output ) {
+		return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+	}
+endif;
+
+add_filter('language_attributes', 'petgorilla_add_opengraph_doctype');
+
+if ( ! function_exists( 'petgorilla_insert_fb_in_head' ) ) :
+	//add Open Graph Meta Info
+	function petgorilla_insert_fb_in_head() {
+		global $post;
+		if ( !is_singular()) //if it is not a post or a page
+			return;
+
+	        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+	        echo '<meta property="og:type" content="article"/>';
+	        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+	        echo '<meta property="og:site_name" content="www.petgorilla.com"/>';
+
+		$image = get_post_meta($post->ID, 'image', true);
+
+		if(!$image && has_post_thumbnail( $post->ID )) {
+
+			$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+			if(count($thumbnail_src)){
+
+				$image = $thumbnail_src[0];
+
+			}
+
+		}
+
+		if(!$image){
+			$image = get_site_url() . get_template_directory() . '/assets/img/pet-gorilla-logo.png';
+		}
+
+		echo '<meta property="og:image" content="' . $image . '"/>';
+
+	}
+
+endif;
+
+add_action( 'wp_head', 'petgorilla_insert_fb_in_head', 5 );
 
 
 /*
