@@ -38,7 +38,7 @@
 
 	.open-desktop .header-nav {
 		padding:30px;
-		transition:all 0s ease 0s;
+		transition:padding 0s ease 0s;
 	}
 
 	.open-desktop .topmenu-link,
@@ -93,8 +93,8 @@
 	}
 
 	.blank-modal .modal-body {
-		width:560px;
-		height:320px;;
+		width:720px;
+		height:412px;;
 	}
 }
 

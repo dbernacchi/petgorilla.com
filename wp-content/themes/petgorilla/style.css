@@ -411,7 +411,7 @@ template {
 	right:45px;
 	padding:0px 30px 30px;
 	background:transparent;
-    overflow: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
 	z-index:3;
 	transition:all 0.3s ease 0s;
@@ -508,17 +508,16 @@ template {
 		.site-header {
 			pointer-events: all;
 			position:absolute;
-	         top:75px;
-	         left:75px;
+	        top:75px;
+	        left:75px;
 			right:75px;
 			display:block;
  			background-color:transparent;
 			height:25%;
 			max-height:150px;
 			z-index:1000;
-
-			transition:left 0.2s ease 0s;
-			transition:top 0.2s ease 0s;
+			transition:left 0.9s ease 0s;
+			transition:top 0.9s ease 0s;
 			transition:height 0s ease 0.6s;
 			transition:background-color 0.2s ease 0s;
 		}
@@ -534,7 +533,7 @@ template {
 				opacity:1;
 				visibility: visible;
 				width:auto;
-				transition:padding 0.2s ease 0s;
+				transition:padding 0s ease 0s;
 
 			}
 
@@ -1068,7 +1067,7 @@ template {
 }
 
 .blank-modal .modal-dialog {
-    width:560px;
+    width:720px;
 }
 
 .subscribe-modal .modal-dialog .fa,
@@ -1091,13 +1090,6 @@ template {
 	color:#000;
 	transition:all 0.3s ease 0s;
 }
-
-.subscribe-modal .modal-body,
-.blank-modal .modal-body {
-	border:1px solid #fff;
-}
-
-
 
 .subscribe-modal .modal-content,
 .blank-modal .modal-content {
@@ -1122,7 +1114,7 @@ template {
 }
 
 .blank-modal .modal-footer {
-	max-width:640px;
+	max-width:720px;
 	background-color:#000;
 	color:#fff;
 	text-transform: uppercase;
