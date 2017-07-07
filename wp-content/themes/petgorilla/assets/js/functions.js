@@ -108,19 +108,21 @@ $(document).ready(function(){
 								});
 							});
 					}
+
+					$('a.pop-video').pop_video();
+
 			};
 
 		}
-
 		scrolltotop.on('click', function(){
 
 			site_slider_wrap.scrollTop(0,0);
 		});
 
 		bind_links_to_desktop_nav();
-
-		$('a.pop-video').pop_video();
 	};
+
+
 
 	pageInit();
 
@@ -188,6 +190,34 @@ $(document).ready(function(){
 		}, 700);
 
 	});
+
+/*
+	 function set_dragend(){
+
+		 itemsInPage = 3;
+
+		if(winWt < 768 && winHt < 425){
+			itemsInPage = 2;
+		}else{
+
+			if(winWt <= 768 && winWt > 600){
+				itemsInPage = 5;
+			}else if(winWt < 599 && winWt > 425){
+				itemsInPage = 4;
+			}else if(winWt < 425){
+				itemsInPage = 3;
+			}
+
+		}
+			site_slider_wrap.dragend({
+				pageContainer: site_content_contain,
+				pageClass: "site-slide-single",
+				itemsInPage: itemsInPage,
+				direction: 'vertical',
+			});
+
+	 }
+*/
 
 	function open_desktop_nav(link, event){
 
@@ -566,100 +596,102 @@ $(document).ready(function(){
 		return template.html();
 	};
 
-	$.fn.pop_video = function(){
 
-		//var $this = $(this);
-
-		return $(this).on('click', function(event){
-
-			event.preventDefault();
-
-			var existing_modal = $('.modal.in'),
-				modal_exists = (existing_modal.length > 0 ? true : false);
-
-			var lnk = $(this),
-				href = lnk.attr('href'),
-				id = lnk.data('id'),
-				type = lnk.data('type'),
-				template_id = lnk.data('template');
-
-			var template = handleTemplate(template_id),
-				template = $(template);
-
-			var template_body = template.find('#modal-body');
-
-			if(href){
-				var query = "player-" + id + "-" + Math.round(1E3 * Math.random()),
-					player_lnk = (type === 'vimeo' ? href+'&api=1&player_id=' + query : href);
-
-				var vid_frame = document.createElement("iframe"),
-					attrs = {
-						id : query,
-						src : href+'&api=1&player_id=' + query,
-						width : 640,
-						height : 360,
-						style : 'embed-responsive-item embed-responsive-16by9',
-						allowfullscreen : "allowfullscreen"
-					}, attr;
-
-				for (attr in attrs) {
-					vid_frame.setAttribute(attr, attrs[attr]);
-				}
-
-				template_body.append(vid_frame);
-			}
-
-
-			var show_modal = function(){
-
-				//console.log(template.attr('id'));
-				if(template.attr('id') === 'subscribe-modal'){
-
-					var form = $('#template-form');
-					form.css({display: 'block'});
-					form.find('input[type="submit"]').on('mousedown', function(event){
-						if(form.find('input[type="text"]').val() == ''){
-
-						}
-					});
-					template.find('.modal-body').append(form);
-
-				}else{
-					template.find('a.pop-video').pop_video();
-				}
-
-				$('body').append(template);
-
-				template.modal({
-					backdrop: 'static',
-					keyboard: true,
-					show: true
-				});
-
-			};
-
-			template.on('show.bs.modal', function (e) {
-				slide_timer_paused = true;
-			});
-
-			template.on('hidden.bs.modal', function (e) {
-				slide_timer_paused = false;
-				template.remove();
-			});
-
-			if(modal_exists){
-
-				existing_modal.modal('hide');
-				setTimeout(function(){
-					show_modal();
-				}, 700);
-
-			}else{
-				show_modal();
-			}
-
-		});
-	}
 
 
 });
+
+$.fn.pop_video = function(){
+
+	//var $this = $(this);
+
+	return $(this).on('click', function(event){
+
+		event.preventDefault();
+
+		var existing_modal = $('.modal.in'),
+			modal_exists = (existing_modal.length > 0 ? true : false);
+
+		var lnk = $(this),
+			href = lnk.attr('href'),
+			id = lnk.data('id'),
+			type = lnk.data('type'),
+			template_id = lnk.data('template');
+
+		var template = handleTemplate(template_id),
+			template = $(template);
+
+		var template_body = template.find('#modal-body');
+
+		if(href){
+			var query = "player-" + id + "-" + Math.round(1E3 * Math.random()),
+				player_lnk = (type === 'vimeo' ? href+'&api=1&player_id=' + query : href);
+
+			var vid_frame = document.createElement("iframe"),
+				attrs = {
+					id : query,
+					src : href+'&api=1&player_id=' + query,
+					width : 640,
+					height : 360,
+					style : 'embed-responsive-item embed-responsive-16by9',
+					allowfullscreen : "allowfullscreen"
+				}, attr;
+
+			for (attr in attrs) {
+				vid_frame.setAttribute(attr, attrs[attr]);
+			}
+
+			template_body.append(vid_frame);
+		}
+
+
+		var show_modal = function(){
+
+			//console.log(template.attr('id'));
+			if(template.attr('id') === 'subscribe-modal'){
+
+				var form = $('#template-form');
+				form.css({display: 'block'});
+				form.find('input[type="submit"]').on('mousedown', function(event){
+					if(form.find('input[type="text"]').val() == ''){
+
+					}
+				});
+				template.find('.modal-body').append(form);
+
+			}else{
+				template.find('a.pop-video').pop_video();
+			}
+
+			$('body').append(template);
+
+			template.modal({
+				backdrop: 'static',
+				keyboard: true,
+				show: true
+			});
+
+		};
+
+		template.on('show.bs.modal', function (e) {
+			slide_timer_paused = true;
+		});
+
+		template.on('hidden.bs.modal', function (e) {
+			slide_timer_paused = false;
+			template.remove();
+		});
+
+		if(modal_exists){
+
+			existing_modal.modal('hide');
+			setTimeout(function(){
+				show_modal();
+			}, 700);
+
+		}else{
+			show_modal();
+		}
+
+	});
+}
