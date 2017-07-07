@@ -109,7 +109,7 @@ $(document).ready(function(){
 							});
 					}
 
-					$('a.pop-video').pop_video();
+					//$('a.pop-video').pop_video();
 
 			};
 
@@ -125,6 +125,8 @@ $(document).ready(function(){
 
 
 	pageInit();
+
+	$('a.pop-video').pop_video();
 
 	$(site_slider_wrap).scroll(function(){
 
