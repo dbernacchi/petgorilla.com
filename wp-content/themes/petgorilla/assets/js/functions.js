@@ -78,7 +78,7 @@ $(document).ready(function(){
 								if(winWt > 768 && site_slider_wrap.length > 0)
 									start_sliders();
 
-							});
+						});
 
 					}else{
 
@@ -179,7 +179,8 @@ $(document).ready(function(){
 			}else{
 
 
-
+				site_slider_arrow_left.css({display: 'none'});
+				site_slider_arrow_right.css({display: 'none'});
 				reset_slider();
 
 			}
