@@ -82,14 +82,14 @@
 		padding:5px 10px;
 		z-index:1000;
 		cursor:pointer;
-		transition:all 0.3s ease 0;
+		transition:all 0.3s ease 0s;
 		display:block;
 	}
 
 	.desktop-nav:hover,.desktop-nav:focus {
 		background-color:#fff;
 		color:#282828;
-		transition:all 0.3s ease 0;
+		transition:all 0.3s ease 0s;
 	}
 
 	.blank-modal .modal-body {
@@ -150,9 +150,7 @@
 		bottom:20px;
 		right:20px;
 	}
-	.directors {
-		poiner-events
-	}
+
 	.site-content,
 	.site-main {
 		pointer-events: none;
@@ -164,7 +162,6 @@
 
 	.subscribe-modal .modal-dialog,
 	.blank-modal .modal-dialog {
-		transform:none !important;
 		top:50%;
 		width:280px;
 		margin:-80px auto;
@@ -318,13 +315,13 @@
 		padding:5px 10px;
 		z-index:1000;
 		cursor:pointer;
-		transition:all .3s ease 0;
+		transition:all .3s ease 0s;
 	}
 
 	.mobile-nav:hover,.mobile-nav:focus {
 		background-color:#fff;
 		color:#282828;
-		transition:all .3s ease 0;
+		transition:all .3s ease 0s;
 	}
 
 	.header-nav {
@@ -567,7 +564,7 @@
 		font-size:16px;
 		padding:5px 6px;
 		letter-spacing:1px;
-		line-height:14x;
+		line-height:14px;
 		font-family: 'DINProRegular', Arial, sans-serif;
 	}
 
@@ -575,7 +572,7 @@
 		font-size:18px;
 		padding:5px 6px;
 		letter-spacing:1px;
-		line-height:14x;
+		line-height:14px;
 		font-family: 'DINProRegular', Arial, sans-serif;
 	}
 
@@ -674,13 +671,13 @@
 	.slider-title h2 {
 		font-size:34px;
 		padding:5px 6px;
-		line-height:30x;
+		line-height:30px;
 	}
 
 	.slider-title a {
 		font-size:34px;
 		padding:5px 6px;
-		line-height:30x;
+		line-height:30px;
 	}
 
 	.blank-modal .modal-dialog {

@@ -931,7 +931,7 @@ template {
 	padding:5px;
 	line-height:1em;
 	font-size: 24px;
-	font-weight:400px;
+	font-weight:400;
 	text-transform: uppercase;
 }
 
@@ -1218,7 +1218,7 @@ template {
 	margin-bottom:7px;
 	padding:6px;
 	font-family: 'DINProRegular', Arial, sans-serif;
-	text-transform: :uppercase;
+	text-transform: uppercase;
 }
 
 .flock-white {
