@@ -411,7 +411,7 @@ template {
 	right:45px;
 	padding:0px 30px 30px;
 	background:transparent;
-    overflow: hidden;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
 	z-index:3;
 	transition:all 0.3s ease 0s;
@@ -421,6 +421,10 @@ template {
     background-color:transparent;
     border-radius: 10px;
     width:7px;
+}
+
+.page-id-90 .site-content-contain {
+    overflow: hidden;
 }
 
 .site-slider-arrow-right,
