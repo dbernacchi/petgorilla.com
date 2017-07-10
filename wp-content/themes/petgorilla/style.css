@@ -1195,6 +1195,7 @@ a.btn-subscribe:hover {
 .subscribe-modal .modal-body input[type="submit"] {
     font-size:18px !important;
 	margin-top:20px;
+    margin-bottom:10px;
 	border-radius:1px;
 	letter-spacing:1.2px;
 	border:none;
