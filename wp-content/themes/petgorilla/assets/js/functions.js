@@ -655,6 +655,13 @@ $.fn.pop_video = function(){
 			if(template.attr('id') === 'subscribe-modal'){
 
 				var form = $('#template-form');
+
+				form.find('.ufbl-form-loader').html(
+					'<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
+				);
+
+				console.log(form.find('.ufbl-form-loader').html());
+				
 				form.css({display: 'block'});
 				form.find('input[type="submit"]').on('mousedown', function(event){
 					if(form.find('input[type="text"]').val() == ''){

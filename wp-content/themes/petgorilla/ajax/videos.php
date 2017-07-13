@@ -1,10 +1,12 @@
+
 <?php
+
 error_reporting(-1);
 ini_set('display_errors', 1);
 
 $clientID       = '6cf757449bec0f3e958ec32f01934eb19e84b43d';
 $clientSecret   = 'CgXADjw6UPvpBWeHUgy3fBS1n8LKS2vSBTcglzU8i5j5Dn97LqQzMtJQ3HdXeOjx4ZlobmNw9Qm8qXDngvUa/suBmHTUnfJBkc1yWtKb7XovP7UwTcGohQYzKE9hGSPT';
-$redirectURI    = 'http://staging2.petgorilla.com';
+$redirectURI    = 'https://petgorilla.com';
 //$redirectURI    = 'http://petgorilla.com';
 $access_token   = '582f63ac14a12aed0da54755d3bb9dc7';
 $cacheDir       = dirname(__FILE__) .'/cache/';
@@ -49,7 +51,7 @@ if (empty($access_token)) {
 }
 
 if (!is_writeable($cacheDir)) {
-    die('Cache dir not writeable');
+    die("Cache dir '$cacheDir' not writeable");
 }
 
 $cacheFile = rtrim($cacheDir, '/') .'/vimeo.'. md5($access_token .'.'. $albumID) .'.json';

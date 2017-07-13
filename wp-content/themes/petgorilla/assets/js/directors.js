@@ -84,8 +84,20 @@ function(processors)
 			var a = (data[rootProperty], 0);
 			for (; a < data.length; a++)
 			{
+
 				success(a);
+
 			}
+
+			//TODD HACK
+			var width = parseFloat(100 / data.length);
+			$('.director-video-thumbs li').css('width', width + '%');
+
+			//HACK
+
+
+
+
 			done();
 			if (detachEvent() > 1E3)
 			{
@@ -191,17 +203,16 @@ function(processors)
 				clearTimeout(dirresize);
 
 				var winHt = parseInt($(window).height()),
-					winWt = parseInt($(window).width());
-
-
+				winWt = parseInt($(window).width());
 
 				var parent = $('#director-video-thumbs-wrap'),
 					div = $('#director-video-thumbs'),
 					wrap = div.closest('div');
+
 				var codeSegments = div.find("li");
+
 				//style = window.getComputedStyle(div);
 				newY = parseFloat(div.width()) / 6;
-
 
 				if(winWt > 768){
 					if(wrap.is('#director-video-thumbs-wrap')){

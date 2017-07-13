@@ -1145,6 +1145,7 @@ a.btn-subscribe {
 	margin:5px 0px 5px 10px;
 	text-decoration: none;
 	cursor: pointer;
+    pointer-events: all;
 }
 
 a.btn-subscribe:hover {
@@ -1245,7 +1246,7 @@ a.btn-subscribe:hover {
 	font-weight:400;
 	margin-bottom:7px;
 	margin-top:5px;
-	padding:0px 5px;
+	padding:0px 7px;
 	font-family: 'DINProRegular', Arial, sans-serif;
 	width:auto;
 }
@@ -1293,3 +1294,5 @@ a.btn-subscribe:hover {
 .flock-white input[type="submit"] {
 
 }
+
+.clear-float{clear: both;}

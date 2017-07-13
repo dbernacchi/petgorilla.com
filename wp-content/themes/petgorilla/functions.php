@@ -195,6 +195,7 @@ if ( ! function_exists( 'petgorilla_script_que' ) ) :
 		wp_enqueue_style('petg-css-fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0', 'all' );
 	 	wp_enqueue_style('style', get_stylesheet_uri() );
 	 	wp_enqueue_style('petg-css-mediaqueries', get_template_directory_uri() . '/assets/css/media-queries.css', array(), '1.0', 'all' );
+		wp_enqueue_style('petg-css-spinner', get_template_directory_uri() . '/assets/css/spinner.css', array(), '1.0', 'all' );
 
 	 	if(!is_page() || get_post_field( 'post_name', get_post() ) == 'blog' || get_post_field( 'post_name', get_post() ) == 'privacy-policy'){
 		 	wp_enqueue_style('petg-css-blog', get_template_directory_uri() . '/assets/css/blog.css', array(), '1.0', 'all' );
