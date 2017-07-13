@@ -660,7 +660,7 @@ $.fn.pop_video = function(){
 					'<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'
 				);
 
-				console.log(form.find('.ufbl-form-loader').html());
+				//console.log(form.find('.ufbl-form-loader').html());
 
 				form.css({display: 'block'});
 				form.find('input[type="submit"]').on('mousedown', function(event){
