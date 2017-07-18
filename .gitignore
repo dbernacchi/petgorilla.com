@@ -1,6 +1,5 @@
 .*
-.DS_Store
-.DS_Store?
+!.htaccess
 wp-content/uploads/*
 
 wp-config.php
