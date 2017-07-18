@@ -47,7 +47,7 @@ require get_template_directory() . '/inc/petg-walker.php';
 //
 // Make function live only when moving from staging to deployment.
 
-/*
+
 if ( ! function_exists( 'security_header_cleanup' ) ) :
 
 	function security_header_cleanup () {
@@ -76,7 +76,7 @@ remove_filter( 'pre_link_description', 'wp_filter_kses' );
 remove_filter( 'pre_link_notes', 'wp_filter_kses' );
 remove_filter( 'term_description', 'wp_kses_data' );
 
-*/
+
 
 // ----------------------
 //** PET GORILLA SETUP **//
