@@ -15,6 +15,18 @@
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
+function tinymce_config( $init ) {
+   // Don't remove line breaks
+   $init['remove_linebreaks'] = false;
+
+   // Do not remove redundant BR tags
+   $init['remove_redundant_brs'] = false;
+
+   // Pass $init back to WordPress
+   return $init;
+}
+add_filter('tiny_mce_before_init', 'tinymce_config');
+
 /*
 ========================================
  Theme Includes
