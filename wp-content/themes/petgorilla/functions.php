@@ -12,6 +12,9 @@
 
 /* ==== PetGorilla only works in WordPress 4.4 or later.  ==== */
 
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+
 /*
 ========================================
  Theme Includes
