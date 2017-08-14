@@ -9,18 +9,13 @@ $(document).ready(function(){
 	var $window = $(window);
 	$window.resize(function(){
 
-			// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-			if ($window.width() != winWt) {
-
-					// Update the window width for next time
-					winWt = $window.width();
-
-					location.reload();
-
-			}
-
-			// Otherwise do nothing
-
+		// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+		if ($window.width() != winWt) {
+			// Update the window width for next time
+			winWt = $window.width();
+			location.reload();
+		}
+		// Otherwise do nothing
 	});
 
 
