@@ -1222,7 +1222,7 @@ a.btn-subscribe:hover {
 	margin:0px auto;
 	padding:5% 0px;
 	height:auto;
-	padding-bottom:95vh;
+	/*padding-bottom:95vh;*/
 }
 
 .flock-page h1 {
