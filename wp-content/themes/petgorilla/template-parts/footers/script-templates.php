@@ -4,8 +4,10 @@
 			<span class="fa fa-times" data-dismiss="modal"></span>
 			<div class="modal-content">
 				<div class="screen-reader-text" id="video-title">Show Video</div>
-				<div class="modal-body embed-responsive embed-responsive-16by9" id="modal-body">
+				<div class="modal-body">
+					<div class="embed-responsive embed-responsive-16by9" id="modal-body">
 
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
