@@ -1,5 +1,8 @@
 var $ = jQuery.noConflict();
 
+var slide_timer_paused = false,
+	modal_open = false;
+
 $(document).ready(function(){
 
 	var winHt = parseInt($(window).height()),
@@ -26,7 +29,6 @@ $(document).ready(function(){
 
 	var siteload,
 		slide_timer,
-		slide_timer_paused = false,
 		slide_count,
 		timer_count = 0,
 		site = $('#site'),
@@ -423,7 +425,7 @@ $(document).ready(function(){
 				if(timer_count === slide_count){
 					site_slider_arrow_left.fadeOut(700);
 				}
-
+console.log(slide_timer_paused);
 				if(!slide_timer_paused){
 
 					slide_title_out(prev_slide, function(){
@@ -584,11 +586,12 @@ $(document).ready(function(){
 			ybot = parseFloat(winHt*.65);
 
 		$(window).mousemove(function(event){
-
-			if(event.pageX > xlft && event.pageX < xrt && event.pageY > ytop && event.pageY < ybot){
-				slide_timer_paused = true;
-			}else{
-				slide_timer_paused = false;
+			if(!modal_open){
+				if(event.pageX > xlft && event.pageX < xrt && event.pageY > ytop && event.pageY < ybot){
+					slide_timer_paused = true;
+				}else{
+					slide_timer_paused = false;
+				}
 			}
 		});
 	}
@@ -607,9 +610,7 @@ var handleTemplate = function(name){
 
 $.fn.pop_video = function(){
 
-	//var $this = $(this);
-
-	return $(this).on('click', function(event){
+	$(this).on('click', function(event){
 
 		event.preventDefault();
 
@@ -677,7 +678,6 @@ $.fn.pop_video = function(){
 			$('body').append(template);
 
 			template.modal({
-				backdrop: 'static',
 				keyboard: true,
 				show: true
 			});
@@ -686,10 +686,12 @@ $.fn.pop_video = function(){
 
 		template.on('show.bs.modal', function (e) {
 			slide_timer_paused = true;
+			modal_open = true;
 		});
 
 		template.on('hidden.bs.modal', function (e) {
 			slide_timer_paused = false;
+			modal_open = false;
 			template.remove();
 		});
 

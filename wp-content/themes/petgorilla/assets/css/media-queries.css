@@ -313,7 +313,7 @@
 		background-color:#282828;
 		color:#fff;
 		padding:5px 10px;
-		z-index:1000;
+		z-index:10000;
 		cursor:pointer;
 		transition:all .3s ease 0s;
 	}
@@ -370,6 +370,7 @@
 	.open-mobile .header-nav-wrap {
 		height:100%;
 		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 
 	.open-mobile .header-nav-menu li.topmenu-item {
@@ -524,7 +525,7 @@
 		position:absolute;
 		bottom:29px;
 		right:40px;
-		z-index:10000;
+		z-index:9999;
 		color:#fff;
 		font-size: 50px;
 		display:none;
@@ -821,6 +822,7 @@
 		bottom:60px;
 		right:20px;
 		padding:0px 5px;
+		overflow:auto;
 	}
 
 	.site-content {

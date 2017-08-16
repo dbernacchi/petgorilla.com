@@ -41,9 +41,9 @@
 
 	<?php
 	if(!petg_get_video()){
-
+		echo '<a href="' . esc_url( get_permalink() ) . '">';
 		petg_image();
-
+		echo '</a>';
 	}
 
 	?>
