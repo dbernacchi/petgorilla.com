@@ -965,12 +965,13 @@ a:active {
 
 .pagination a:hover,
 .pagination a:focus {
-	color: #1a1a1a;
+	background-color: #1a1a1a;
 }
 
 .pagination .nav-links {
 	padding-right: 106px;
 	position: relative;
+	padding-top:15px;
 }
 
 .pagination .nav-links:before,
@@ -998,11 +999,12 @@ a:active {
 .pagination .current {
 	display: inline-block;
 	font-weight: 700;
+	background-color:transparent !important;
+
 }
 
 .pagination .prev,
 .pagination .next {
-	background-color: transparent;
 	color: #fff;
 	display: inline-block;
 
@@ -1470,8 +1472,8 @@ blockquote:after,
  */
 
 .site-main > article {
- 	margin-bottom: 1.5em;
- 	position: relative;
+	margin-bottom: 3.5em;
+	position: relative;
 }
 
 .entry-header,
@@ -2635,6 +2637,21 @@ article img{
 
 	.pagination .page-numbers {
 		display: inline-block;
+		background-color:rgb(0,0,0);
+		line-height:27px;
+		text-align:center;
+		width:30px;
+		height:30px;
+		font-size:14px;
+		font-family:"DINProLight", Arial. sans-serif;
+	}
+
+	.pagination a.page-numbers:hover,
+	.pagination a.page-numbers:focus {
+		background-color: transparent;
+	}
+	.page-numbers.dots {
+		color:#fff;
 	}
 
 	.site-main > article {
@@ -3233,10 +3250,8 @@ article img{
 		margin-bottom: 1.1em;
 	}
 
-    .site-main > article {
-		margin-bottom: 1.5em;
-		padding-bottom:20px;
-		border-bottom:1px solid rgba(0,0,0,0.8);
+	.site-main > article {
+		margin-bottom: 7.0em;
 	}
 
 	.entry-title {
