@@ -1470,8 +1470,8 @@ blockquote:after,
  */
 
 .site-main > article {
-	margin-bottom: 3.5em;
-	position: relative;
+ 	margin-bottom: 1.5em;
+ 	position: relative;
 }
 
 .entry-header,
@@ -3233,8 +3233,10 @@ article img{
 		margin-bottom: 1.1em;
 	}
 
-	.site-main > article {
-		margin-bottom: 7.0em;
+    .site-main > article {
+		margin-bottom: 1.5em;
+		padding-bottom:20px;
+		border-bottom:1px solid rgba(0,0,0,0.8);
 	}
 
 	.entry-title {
