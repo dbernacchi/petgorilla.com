@@ -680,6 +680,7 @@ class WPSEO_Meta {
 		global $post;
 
 		$postid = absint( $postid );
+
 		if ( $postid === 0 ) {
 			if ( ( isset( $post ) && is_object( $post ) ) && ( isset( $post->post_status ) && $post->post_status !== 'auto-draft' ) ) {
 				$postid = $post->ID;
@@ -692,14 +693,23 @@ class WPSEO_Meta {
 		$custom = get_post_custom( $postid ); // Array of strings or empty array.
 
 		if ( isset( $custom[ self::$meta_prefix . $key ][0] ) ) {
+
 			$unserialized = maybe_unserialize( $custom[ self::$meta_prefix . $key ][0] );
 			if ( $custom[ self::$meta_prefix . $key ][0] === $unserialized ) {
+
+				//TODD FIX
+				if(array_key_exists($key, $custom) && count($custom[$key])){
+					return $custom[$key][0];
+				}
+
 				return $custom[ self::$meta_prefix . $key ][0];
 			}
 			else {
+
 				$field_def = self::$meta_fields[ self::$fields_index[ self::$meta_prefix . $key ]['subset'] ][ self::$fields_index[ self::$meta_prefix . $key ]['key'] ];
 				if ( isset( $field_def['serialized'] ) && $field_def['serialized'] === true ) {
 					// Ok, serialize value expected/allowed.
+
 					return $unserialized;
 				}
 			}

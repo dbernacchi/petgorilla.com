@@ -247,10 +247,10 @@ if ( ! function_exists( 'petgorilla_insert_fb_in_head' ) ) :
 		if ( !is_singular()) //if it is not a post or a page
 			return;
 
-	        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
-	        echo '<meta property="og:type" content="article"/>';
-	        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
-	        echo '<meta property="og:site_name" content="www.petgorilla.com"/>';
+	        //echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+	        //echo '<meta property="og:type" content="article"/>';
+	        //echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+	        //echo '<meta property="og:site_name" content="www.petgorilla.com"/>';
 
 		$image = get_post_meta($post->ID, 'image', true);
 
@@ -269,13 +269,13 @@ if ( ! function_exists( 'petgorilla_insert_fb_in_head' ) ) :
 			$image = get_site_url() . get_template_directory() . '/assets/img/pet-gorilla-logo.png';
 		}
 
-		echo '<meta property="og:image" content="' . $image . '"/>';
+		//echo '<meta property="og:image" content="' . $image . '"/>';
 
 	}
 
 endif;
 
-add_action( 'wp_head', 'petgorilla_insert_fb_in_head', 5 );
+//add_action( 'wp_head', 'petgorilla_insert_fb_in_head', 1 );
 
 
 /*
