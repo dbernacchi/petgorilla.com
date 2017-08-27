@@ -965,13 +965,12 @@ a:active {
 
 .pagination a:hover,
 .pagination a:focus {
-	background-color: #1a1a1a;
+	color: #1a1a1a;
 }
 
 .pagination .nav-links {
 	padding-right: 106px;
 	position: relative;
-	padding-top:15px;
 }
 
 .pagination .nav-links:before,
@@ -999,12 +998,11 @@ a:active {
 .pagination .current {
 	display: inline-block;
 	font-weight: 700;
-	background-color:transparent !important;
-
 }
 
 .pagination .prev,
 .pagination .next {
+	background-color: transparent;
 	color: #fff;
 	display: inline-block;
 
@@ -1472,7 +1470,7 @@ blockquote:after,
  */
 
 .site-main > article {
-	margin-bottom: 3.5em;
+	margin-bottom: 1.9em;
 	position: relative;
 }
 
@@ -2637,25 +2635,10 @@ article img{
 
 	.pagination .page-numbers {
 		display: inline-block;
-		background-color:rgb(0,0,0);
-		line-height:27px;
-		text-align:center;
-		width:30px;
-		height:30px;
-		font-size:14px;
-		font-family:"DINProLight", Arial. sans-serif;
-	}
-
-	.pagination a.page-numbers:hover,
-	.pagination a.page-numbers:focus {
-		background-color: transparent;
-	}
-	.page-numbers.dots {
-		color:#fff;
 	}
 
 	.site-main > article {
-		margin-bottom: 5.25em;
+		margin-bottom: 1.9em;
 	}
 
 	.entry-header,
@@ -3251,7 +3234,7 @@ article img{
 	}
 
 	.site-main > article {
-		margin-bottom: 7.0em;
+		margin-bottom: 1.9em;
 	}
 
 	.entry-title {

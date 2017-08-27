@@ -5,7 +5,7 @@
 			<div class="modal-content">
 				<div class="screen-reader-text" id="video-title">Show Video</div>
 				<div class="modal-body">
-					<div class="embed-responsive embed-responsive-16by9" id="modal-body">
+					<div class="embed-responsive embed-responsive-16by9 full-screen-video" id="modal-body">
 
 					</div>
 				</div>
@@ -21,7 +21,7 @@
 		<div class="modal-dialog" role="document">
 			<span class="fa fa-times" data-dismiss="modal"></span>
 			<div class="modal-content">
-				<div class="screen-reader-text" id="video-title">Show Video</div>
+				<div class="screen-reader-text" id="video-title">Subscribe</div>
 				<div class="modal-body" id="modal-body">
 					Learn more about the fascinating things happening at PET GØRILLA by subscribing to our newsletter
 				</div>

@@ -11,9 +11,9 @@ $(document).ready(function(){
 	// Resize Event
 	var $window = $(window);
 	$window.resize(function(){
-
+console.log($('#video-modal').length);
 			// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-			if ($window.width() != winWt) {
+			if ($window.width() != winWt && $('#video-modal').length <= 0) {
 
 					// Update the window width for next time
 					winWt = $window.width();
@@ -639,7 +639,9 @@ $.fn.pop_video = function(){
 					width : 640,
 					height : 360,
 					style : 'embed-responsive-item embed-responsive-16by9',
-					allowfullscreen : "allowfullscreen"
+					webkitallowfullscreen : 'true',
+					mozallowfullscreen : 'true',
+					allowfullscreen : 'true'
 				}, attr;
 
 			for (attr in attrs) {

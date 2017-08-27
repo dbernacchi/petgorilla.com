@@ -357,6 +357,10 @@ template {
 	z-index: 100000; /* Above WP toolbar. */
 }
 
+.full-screen-video{
+   animation-fill-mode: none !important;
+}
+
 /*--------------------------------------------------------------
 4.0 Boundary
 --------------------------------------------------------------*/
