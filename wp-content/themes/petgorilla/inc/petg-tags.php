@@ -216,6 +216,10 @@ function petg_image() {
 
 	$image = get_post_meta($id, 'image', true);
 
+	if(!$image){
+		$image = get_post_meta($id, 'opengraph-image', true);
+	}
+
 	if(!$image && has_post_thumbnail( $id )) {
 
 		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
