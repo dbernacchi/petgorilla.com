@@ -697,11 +697,6 @@ class WPSEO_Meta {
 			$unserialized = maybe_unserialize( $custom[ self::$meta_prefix . $key ][0] );
 			if ( $custom[ self::$meta_prefix . $key ][0] === $unserialized ) {
 
-				//TODD FIX
-				if(array_key_exists($key, $custom) && count($custom[$key])){
-					return $custom[$key][0];
-				}
-
 				return $custom[ self::$meta_prefix . $key ][0];
 			}
 			else {
@@ -713,6 +708,11 @@ class WPSEO_Meta {
 					return $unserialized;
 				}
 			}
+		}
+
+		//TODD FIX
+		if(array_key_exists($key, $custom) && count($custom[$key])){
+			return $custom[$key][0];
 		}
 
 		// Meta was either not found or found, but object/array while not allowed to be.
