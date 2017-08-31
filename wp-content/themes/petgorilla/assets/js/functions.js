@@ -3,28 +3,36 @@ var $ = jQuery.noConflict();
 var slide_timer_paused = false,
 	modal_open = false;
 
+
 $(document).ready(function(){
 
-	var winHt = parseInt($(window).height()),
-		winWt = parseInt($(window).width());
+
+	var winHt = parseInt($(window).height())
+	var winWt = parseInt($(window).width());
 
 	// Resize Event
 	var $window = $(window);
+
+
 	$window.resize(function(){
-console.log($('#video-modal').length);
-			// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-			if ($window.width() != winWt && $('#video-modal').length <= 0) {
 
-					// Update the window width for next time
-					winWt = $window.width();
+			//var dirresize = setTimeout(function(){
+			//clearTimeout(dirresize);
 
-					location.reload();
+			winHt = parseInt($(window).height())
+			winWt = parseInt($(window).width());
 
-			}
+			$('.site-slide-single').css('width', winWt + 'px');
+			$('.site-slide-single').css('height', winHt + 'px');
 
+			center('.center');
+
+			center('.modal-dialog');
 			// Otherwise do nothing
 
+			//}, 700);
 	});
+
 
 
 	var siteload,
@@ -143,6 +151,7 @@ console.log($('#video-modal').length);
 
 	});
 
+	/*
 	$(window).resize(function(){
 
 		slide_timer_paused = false;
@@ -194,6 +203,7 @@ console.log($('#video-modal').length);
 		}, 700);
 
 	});
+	*/
 
 /*
 	 function set_dragend(){
@@ -596,10 +606,45 @@ console.log(slide_timer_paused);
 		});
 	}
 
+	$(window).on('shown.bs.modal', function() {
 
+		center('.modal-dialog');
 
+	});
 
+	center('.center');
 
+	function center(selector){
+
+		//get viewport width and height
+		var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+
+		//get modal width and height
+		var modal = $(selector);
+
+		modal.css('width', 'initial');
+
+		var maxw = x * .80;
+
+		var half_maxw = maxw * .50 * -1;
+
+		modal.css('max-width', maxw + 'px');
+
+		var mw = modal.width();
+		var mh = modal.height();
+
+		var mt = (y/2) - (mh / 2);
+
+		modal.css('position', 'fixed');
+		modal.css('left', '50%');
+		modal.css('top', mt + 'px');
+		modal.css('padding', '0');
+
+		modal.css('margin', '0');
+		modal.css('margin-left', half_maxw + 'px');
+
+		modal.css('visibility', 'visible');
+	}
 
 });
 

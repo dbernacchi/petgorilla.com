@@ -112,11 +112,12 @@ function(processors)
 		{
 			var winWt = parseInt($(window).width())
 			var d = data[key];
+
 			if (d && d.posters)
 			{ /** @type {(HTMLElement|null)} */
 				var s2 = document.getElementById("director-video-thumbs"); /** @type {Element} */
 				var div2 = document.createElement("li"); /** @type {string} */
-
+				div2.setAttribute('key', key);
 /*
 				if(winWt <= 768){
 					div2.setAttribute('class','col-md-6');
@@ -127,13 +128,30 @@ function(processors)
 
 				var item = '<figure style="background-image: url(' + d.posters.medium.link + ')"><span class="screen-reader-text">' + d.title + "</span></figure>"; /** @type {string} */
 				div2.innerHTML = item;
+
+
 				div2.addEventListener("click", function(types)
 				{
+
+					$('.director-video-thumbs li').removeClass('active');
+
+					//var active = $('.director-video-thumbs li[]');
+
+					//console.log(active.html());
+
+					//var this_key = active.attr('key');
+
+					//console.log(this_key);
+
 					$('#site-content-contain').scrollTop(0, 0);
 					types.preventDefault();
+
 					done(key);
+
 				});
 				s2.appendChild(div2);
+
+
 
 				// if(winWt > 768){
 				// 	initialize();
@@ -199,8 +217,8 @@ function(processors)
 		};
 
 		window.onresize = function(){
-			var dirresize = setTimeout(function(){
-				clearTimeout(dirresize);
+			//var dirresize = setTimeout(function(){
+				//clearTimeout(dirresize);
 
 				var winHt = parseInt($(window).height()),
 				winWt = parseInt($(window).width());
@@ -228,7 +246,7 @@ function(processors)
 								width:'100%',
 								left: '0px'
 							});
-							parent.find('span.thumbarrow..fa-angle-right').fadeOut(300);
+							parent.find('span.thumbarrow.fa-angle-right').fadeOut(300);
 						}
 					}
 
@@ -248,7 +266,7 @@ function(processors)
 					parent.find('span.thumbarrow.fa-angle-left').fadeOut(300);
 				}
 
-			}, 700);
+			//}, 700);
 
 		};
 	/**
@@ -341,6 +359,7 @@ function(processors)
 			}
 			setTimeout(function()
 			{
+
 				init(data[i]);
 			}, 20);
 			position = i;
@@ -350,7 +369,7 @@ function(processors)
 			var j = 0;
 			for (;j < verticalSlides.length;j++) {
 				if (j == position) {
-					verticalSlides[j].classList.add("active");
+					//verticalSlides[j].classList.add("active");
 				} else {
 					verticalSlides[j].classList.remove("active");
 				}
@@ -598,6 +617,7 @@ function(processors)
 				method: method,
 				value: data
 			});
+
 			allow.contentWindow.postMessage(sData, origin);
 		}
 		/**

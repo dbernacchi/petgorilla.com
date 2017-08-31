@@ -369,7 +369,7 @@
 
 	.open-mobile .header-nav-wrap {
 		height:100%;
-		overflow-y:scroll;
+		overflow-y:auto;
 	}
 
 	.open-mobile .header-nav-menu li.topmenu-item {
@@ -801,11 +801,11 @@
 	}
 
 	.site-content-contain {
-		top:80px;
-		left:20px;
-		bottom:60px;
-		right:20px;
-		padding:0px 5px;
+		top: 80px;
+    left: 46px;
+    bottom: 60px;
+    right: 51px;
+    padding: 0px 5px;
 	}
 
 	.site-content {
@@ -867,6 +867,6 @@
 	}
 	.flock-page {
 		padding-top:0px !important;
-		padding-bottom:390px;
+
 	}
 }

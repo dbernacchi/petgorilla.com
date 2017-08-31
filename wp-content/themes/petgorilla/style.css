@@ -13,6 +13,9 @@ Tags: one-page, flexible-header, accessibility-ready, custom-colors, custom-head
 
 */
 
+iframe{border: 0!important; width: 100%!important;}
+.center{visibility:hidden;}
+
 /*--------------------------------------------------------------
 1.0 Fonts
 --------------------------------------------------------------*/
@@ -974,7 +977,7 @@ template {
 }
 
 .digital-right-drop {
-	width:inherit;
+	width:100%;
 	height:inherit;
 }
 
@@ -1170,7 +1173,7 @@ a.btn-subscribe {
 	padding:3px 12px 3px 8px;
 	font-size:14px;
 	color:#fff;
-	margin:5px 0px 5px 10px;
+	margin:5px 0px 5px 0px;
 	text-decoration: none;
 	cursor: pointer;
     pointer-events: all;
@@ -1224,6 +1227,11 @@ a.btn-subscribe:hover {
 	font-family: 'DINProLight', Arial, sans-serif;
 }
 
+#subscribe-input{
+    width: 245px;
+    pointer-events: all;
+}
+
 .subscribe-modal .modal-body input[type="submit"] {
     font-size:18px !important;
 	margin-top:20px;
@@ -1245,13 +1253,13 @@ a.btn-subscribe:hover {
 --------------------------------------------------------------*/
 
 .flock-page:first-child {
-	padding-top:10%;
+	padding-top:1%;
 }
 .flock-page {
 	display:block;
 	width:80%;
 	margin:0px auto;
-	padding:5% 0px;
+	padding:0% 0px;
 	height:auto;
 	/*padding-bottom:95vh;*/
 }
@@ -1289,6 +1297,7 @@ a.btn-subscribe:hover {
 .flock-sec a {
 	display:inline-block;
 	height:auto;
+    pointer-events: all;
 }
 
 .flock-sec a img {
