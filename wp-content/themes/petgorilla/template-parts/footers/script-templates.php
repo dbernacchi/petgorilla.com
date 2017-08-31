@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-					Learn more about Pet GØRILLA - Subscribe to our newsletter <a class="pop-video" data-template="#template-modal-subscribe">Subscribe</a>
+					Learn more about Pet GØRILLA <a class="pop-video" data-template="#template-modal-subscribe">Subscribe</a>
 			</div>
 		</div>
 	</div>

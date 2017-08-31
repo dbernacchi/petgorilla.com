@@ -616,21 +616,28 @@ console.log(slide_timer_paused);
 
 	function center(selector){
 
+		var modal = $(selector);
+		if(modal.parent().attr('id') == 'video-modal'){
+			return;
+		}
+
 		//get viewport width and height
 		var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
 
 		//get modal width and height
-		var modal = $(selector);
 
 		modal.css('width', 'initial');
 
 		var maxw = x * .80;
 
-		var half_maxw = maxw * .50 * -1;
-
 		modal.css('max-width', maxw + 'px');
 
 		var mw = modal.width();
+
+		modal.css('width', mw);
+
+		var half_maxw = maxw * .50 * -1;
+
 		var mh = modal.height();
 
 		var mt = (y/2) - (mh / 2);
