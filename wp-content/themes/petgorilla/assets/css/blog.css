@@ -2258,7 +2258,7 @@ iframe,
 object,
 video {
 	margin-bottom: 1.75em;
-	max-width: 100%;
+	max-width: 500px;
 	vertical-align: middle;
 }
 
